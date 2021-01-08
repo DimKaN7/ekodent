@@ -1,40 +1,11 @@
 <template>
   <div class="header-container">
     <div class="header">
+
       <div class="info">
-
         <a class="info__logo" href="#"></a>
-
-        <div class="info__content">
-          <div class="icon" :style="{backgroundImage: `url(${Mail})`, marginRight: '6px'}"></div>
-          <div class="text" style="justify-content: center;">
-            <a href="mailto:eko-dent2001@mail.ru">eko-dent2001@mail.ru</a>
-          </div>
-        </div>
-
-        <div class="info__content">
-          <div class="icon" :style="{backgroundImage: `url(${Time})`, marginRight: '9px'}"></div>
-          <div class="text">
-            <div>пнд — птн: 10.00 — 20.00</div>
-            <div>сбт — вскр: 11.00 — 16.00</div>
-          </div>
-        </div>
-
-        <div class="info__content">
-          <div class="icon" :style="{backgroundImage: `url(${Location})`, marginRight: '1px'}"></div>
-          <div class="text">
-            <div>г. Иркутск</div>
-            <div>ул. Декабрьских событий, 109</div>
-          </div>
-        </div>
-
-        <div class="info__content">
-          <div class="icon" :style="{backgroundImage: `url(${Phone})`, marginRight: '4px'}"></div>
-          <div class="text" style="font-weight: 500; font-size: 18px;">
-            <a href="tel:+79246136900">+7 924 613 6900</a>
-            <a href="tel:+73952252712">+7 (3952) 252-712</a>
-          </div>
-        </div>
+        <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="strings[index].texts" 
+          :hrefs="strings[index].hrefs" :styles="index === 3 && 'font-weight: 500;'"/>
       </div>
 
       <div class="menu">
@@ -45,6 +16,7 @@
           <div class="sign-up">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -55,11 +27,18 @@
   import Location from '../../assets/Header/Location.png';
   import Phone from '../../assets/Header/Phone.png';
 
+  import InfoContent from './InfoContent/InfoContent';
+  import strings from '../../tools/strings';
+
   export default {
     name: 'Header',
+    components: {
+      InfoContent,
+    },
     data() {
       return {
-        Mail, Time, Location, Phone,
+        icons: [Mail, Time, Location, Phone],
+        strings,
         menuItems: [
           'Главная', 'О клинике', 'Цены', 'Услуги', 'Врачи', 'Отзывы', 'Вопросы'
         ],
@@ -96,45 +75,12 @@
         align-items: center;
 
         &__logo {
-          // position: absolute;
           width: 338px;
           height: 61px;
           background-image: url('../../assets/Header/Logo.png');
           background-position: center;
           background-repeat: no-repeat;
           background-size: contain;
-        }
-
-        &__content {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-        }
-
-        .icon {
-          width: 54px;
-          height: 54px;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: contain;
-        }
-
-        .text {
-          display: flex;
-          flex-direction: column;
-          height: 42px;
-          justify-content: space-between;
-          font-size: 14px;
-          
-
-          >a {
-            text-decoration: none;
-            color: black;
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
         }
       }
 
