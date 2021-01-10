@@ -11,56 +11,55 @@
 </template>
 
 <script>
-  export default {
-    name: 'InfoContent', 
-    props: {
-      icon: {
-        type: String,
-        required: true,
-      },
-      texts: {
-        type: Array,
-        required: true,
-      },
-      hrefs: {
-        type: Array,
-      },
-      styles: {
-        type: String,
-      },
-    }
+export default {
+  name: 'InfoContent', 
+  props: {
+    icon: {
+      type: String,
+      required: true,
+    },
+    texts: {
+      type: Array,
+      required: true,
+    },
+    hrefs: {
+      type: Array,
+    },
+    styles: {
+      type: String,
+    },
   }
+}
 </script>
 
 <style lang="scss">
-  .info-content {
+.info-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .icon {
+    width: 54px;
+    height: 54px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .text {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    height: 42px;
+    font-size: 14px;
 
-    .icon {
-      width: 54px;
-      height: 54px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
+    >a {
+      text-decoration: none;
+      color: black;
 
-    .text {
-      display: flex;
-      flex-direction: column;
-      height: 42px;
-      font-size: 14px;
-
-      >a {
-        text-decoration: none;
-        color: black;
-
-        &:hover {
-          text-decoration: underline;
-        }
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
-
+}
 </style>

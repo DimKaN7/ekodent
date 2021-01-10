@@ -1,4 +1,4 @@
-const strings = [
+export const headerStrings = [
   {
     texts: ['eko-dent2001@mail.ru'],
     hrefs: ['mailto:eko-dent2001@mail.ru'],
@@ -17,4 +17,49 @@ const strings = [
   }
 ];
 
-export default strings;
+export const servicesStrings = {
+  title: ['наши', 'услуги'],
+  cards: [
+    {
+      imageIndex: 0,
+      title: 'ТЕРАПИЯ',
+    },
+    {
+      imageIndex: 1,
+      title: 'ДЕНТАЛЬНАЯ ИМПЛАНТАЦИЯ',
+    },
+    {
+      imageIndex: 2,
+      title: 'ПАРОДОНТОЛОГИЯ',
+    },
+    {
+      imageIndex: 3,
+      title: 'ДЕТСКАЯ СТОМАТОЛОГИЯ',
+    },
+    {
+      imageIndex: 4,
+      title: 'ДЕТСКАЯ СТОМАТОЛОГИЯ',
+    },
+    {
+      imageIndex: 5,
+      title: 'ПРОТЕЗИРОВАНИЕ',
+    },
+    {
+      imageIndex: 6,
+      title: 'ФИЗИОЛЕЧЕНИЕ',
+    },
+    {
+      imageIndex: 7,
+      title: 'ОРТОДОНТИЯ',
+    }
+  ],
+};
+
+export const aboutStrings = {
+  titles: ['три главных аргумента ', 'для посещения нашей клиники'],
+  cards: [
+    'Передовое диагностическое и лечебное оборудование, включая собственную зуботехническую лабораторию',
+    'Высокая квалификация и многолетний врачебный опыт: в нашей стоматологической клинике работают только профессиональные стоматологи, окончившие ординатуру,специалисты высшей категории',
+    'Весьма демократичные цены. И не в ущерб качеству'
+  ],
+}
