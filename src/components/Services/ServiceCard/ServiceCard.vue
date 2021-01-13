@@ -1,6 +1,6 @@
 <template>
-  <div class="service-card">
-    <div class="service-card__image" :style="{backgroundImage: `url(${getImage})`}"></div>
+  <div class="service-card" @mouseenter="onHover()" @mouseleave="onLeave()">
+    <div :class="['service-card__image', hovered && 'hovered']" :style="{'background-image': `url(${image})`}"></div>
     <div class="service-card__title">{{title}}</div>
   </div>
 </template>
@@ -9,8 +9,8 @@
 export default {
   name: 'ServiceCard',
   props: {
-    imageIndex: {
-      type: Number,
+    image: {
+      type: String,
       required: true,
     },
     title: {
@@ -18,9 +18,17 @@ export default {
       required: true,
     }
   },
-  computed: {
-    getImage() {
-      return require(`../../../assets/Services/${this.imageIndex}.png`);
+  data() {
+    return {
+      hovered: false,
+    }
+  },
+  methods: {
+    onHover() {
+      this.hovered = true;
+    },
+    onLeave() {
+      this.hovered = false;
     }
   }
 }
@@ -43,15 +51,21 @@ export default {
   }
 
   &__image {
-    width: 252px;
-    height: 222px;
+    width: 245px;
+    height: 220px;
     position: absolute;
-    left: 0px;
-    top: -18.39px;
+    left: -1px;
+    top: -19.39px;
     border-radius: 10px;
-    background-position: top left;
+    background-position: left;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    transition: transform 0.3s linear;
+    border: 1px solid transparent;
+
+    &.hovered {
+      transform: scale(1.05);
+    }
   }
 
   &__title {

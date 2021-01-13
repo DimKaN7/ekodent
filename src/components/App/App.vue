@@ -3,6 +3,7 @@
     <Header />
     <Services />
     <About />
+    <Stocks />
   </div>
 </template>
 
@@ -10,11 +11,12 @@
   import Header from '../Header/Header';
   import Services from '../Services/Services';
   import About from '../About/About';
+  import Stocks from '../Stocks/Stocks';
 
   export default {
     name: 'App',
     components: {
-      Header, Services, About
+      Header, Services, About, Stocks,
     }
   }
 </script>

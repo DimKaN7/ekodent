@@ -28,11 +28,14 @@ export default {
   display: flex;
   flex-direction: row;
   cursor: pointer;
+  position: relative;
 
   &__number {
     flex: 0 0 54px;
     color: #4D8E4D;
     font-size: 96px;
+    line-height: 75px;
+    margin-right: 3px;
   }
 
   &__content {

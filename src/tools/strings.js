@@ -21,35 +21,35 @@ export const servicesStrings = {
   title: ['наши', 'услуги'],
   cards: [
     {
-      imageIndex: 0,
+      image: require(`../assets/Services/0.png`),
       title: 'ТЕРАПИЯ',
     },
     {
-      imageIndex: 1,
+      image: require(`../assets/Services/1.png`),
       title: 'ДЕНТАЛЬНАЯ ИМПЛАНТАЦИЯ',
     },
     {
-      imageIndex: 2,
+      image: require(`../assets/Services/2.png`),
       title: 'ПАРОДОНТОЛОГИЯ',
     },
     {
-      imageIndex: 3,
+      image: require(`../assets/Services/3.png`),
       title: 'ДЕТСКАЯ СТОМАТОЛОГИЯ',
     },
     {
-      imageIndex: 4,
+      image: require(`../assets/Services/4.png`),
       title: 'ДЕТСКАЯ СТОМАТОЛОГИЯ',
     },
     {
-      imageIndex: 5,
+      image: require(`../assets/Services/5.png`),
       title: 'ПРОТЕЗИРОВАНИЕ',
     },
     {
-      imageIndex: 6,
+      image: require(`../assets/Services/6.png`),
       title: 'ФИЗИОЛЕЧЕНИЕ',
     },
     {
-      imageIndex: 7,
+      image: require(`../assets/Services/7.png`),
       title: 'ОРТОДОНТИЯ',
     }
   ],
@@ -61,5 +61,20 @@ export const aboutStrings = {
     'Передовое диагностическое и лечебное оборудование, включая собственную зуботехническую лабораторию',
     'Высокая квалификация и многолетний врачебный опыт: в нашей стоматологической клинике работают только профессиональные стоматологи, окончившие ординатуру,специалисты высшей категории',
     'Весьма демократичные цены. И не в ущерб качеству'
+  ],
+}
+
+export const stocksStrings = {
+  title: ['наши', 'акции'],
+  arrow: require('../assets/Stocks/arrow.svg'),
+  stocks: [
+    {
+      // image: require(),
+      text: 'AIR PROPHY UNIT + KAVA = ВКУСНО!'
+    },
+    {
+      // image: require(),
+      text: 'Подарок ко Дню рождения!',
+    },
   ],
 }
