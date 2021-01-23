@@ -1,5 +1,5 @@
 <template>
-  <div class="service-card" @mouseenter="onHover()" @mouseleave="onLeave()">
+  <div class="service-card" @mouseenter="hovered = true;" @mouseleave="hovered = false">
     <div :class="['service-card__image', hovered && 'hovered']" :style="{'background-image': `url(${image})`}"></div>
     <div class="service-card__title">{{title}}</div>
   </div>
@@ -23,14 +23,6 @@ export default {
       hovered: false,
     }
   },
-  methods: {
-    onHover() {
-      this.hovered = true;
-    },
-    onLeave() {
-      this.hovered = false;
-    }
-  }
 }
 </script>
 

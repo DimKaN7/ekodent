@@ -66,15 +66,16 @@ export const aboutStrings = {
 
 export const stocksStrings = {
   title: ['наши', 'акции'],
-  arrow: require('../assets/Stocks/arrow.svg'),
   stocks: [
     {
-      // image: require(),
-      text: 'AIR PROPHY UNIT + KAVA = ВКУСНО!'
+      image: require('../assets/Stocks/Stocks/0.png'),
+      title: 'AIR PROPHY UNIT + KAVA = ВКУСНО!',
+      buttonText: 'Узнать подробнее',
     },
     {
-      // image: require(),
-      text: 'Подарок ко Дню рождения!',
+      image: require('../assets/Stocks/Stocks/1.png'),
+      title: 'Подарок ко Дню рождения!',
+      buttonText: 'Узнать подробнее',
     },
   ],
 }

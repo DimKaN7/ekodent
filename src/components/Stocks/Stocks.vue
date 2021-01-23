@@ -5,19 +5,27 @@
         <span>{{stocksStrings.title[0]}}</span> <span>{{stocksStrings.title[1]}}</span>
       </div>
       <div class="stocks__cards">
-        <div class="arrow" :style="{'background-image': `url(${stocksStrings.arrow})`}"></div>
-        <div class="cards"></div>
-        <div class="arrow" :style="{'background-image': `url(${stocksStrings.arrow})`}"></div>
+        <Arrow left/>
+        <div class="cards">
+          <StockCard v-for="(stock, index) in stocksStrings.stocks" :key="index" :stock="stock"/>
+        </div>
+        <Arrow />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import StockCard from './StockCard';
+import Arrow from './Arrow';
+
 import {stocksStrings} from '../../tools/strings';
 
 export default {
   name: 'Stocks',
+  components: {
+    StockCard, Arrow,
+  },
   data() {
     return {
       stocksStrings,
@@ -36,7 +44,7 @@ export default {
   .stocks {
     width: 1267px;
     height: 100%;
-    padding: 98px 0 73px 0;
+    padding-top: 98px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,26 +67,21 @@ export default {
 
       .cards {
         flex: 1 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
       }
 
-      .arrow {
-        width: 33px;
-        height: 100%;
-        flex: 0 0 33px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        cursor: pointer;
+      // .arrow-container {
+      //   &:first-child {
+      //     margin-right: 44px;
+      //   }
 
-        &:first-child {
-          margin-right: 44px;
-        }
-
-        &:last-child {
-          transform: scale(-1, 1);
-          margin-left: 44px;
-        }
-      }
+      //   &:last-child {
+      //     transform: scale(-1, 1);
+      //     margin-left: 44px;
+      //   }
+      // }
     }
   }
 }
