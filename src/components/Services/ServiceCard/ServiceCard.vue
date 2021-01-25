@@ -1,6 +1,6 @@
 <template>
-  <div class="service-card" @mouseenter="hovered = true;" @mouseleave="hovered = false">
-    <div :class="['service-card__image', hovered && 'hovered']" :style="{'background-image': `url(${image})`}"></div>
+  <div class="service-card">
+    <div class="service-card__image" :style="{'background-image': `url(${image})`}"></div>
     <div class="service-card__title">{{title}}</div>
   </div>
 </template>
@@ -18,11 +18,6 @@ export default {
       required: true,
     }
   },
-  data() {
-    return {
-      hovered: false,
-    }
-  },
 }
 </script>
 
@@ -35,6 +30,10 @@ export default {
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  &:hover &__image {
+    transform: scale(1.05);
+  }
 
   &:hover {
     background-color: #4D8E4D;
@@ -54,10 +53,6 @@ export default {
     background-size: cover;
     transition: transform 0.3s linear;
     border: 1px solid transparent;
-
-    &.hovered {
-      transform: scale(1.05);
-    }
   }
 
   &__title {

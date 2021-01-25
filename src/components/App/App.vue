@@ -4,21 +4,23 @@
     <Services />
     <About />
     <Stocks />
+    <Doctors />
   </div>
 </template>
 
 <script>
-  import Header from '../Header/Header';
-  import Services from '../Services/Services';
-  import About from '../About/About';
-  import Stocks from '../Stocks/Stocks';
+import Header from '../Header/Header';
+import Services from '../Services/Services';
+import About from '../About/About';
+import Stocks from '../Stocks/Stocks';
+import Doctors from '../Doctors/Doctors';
 
-  export default {
-    name: 'App',
-    components: {
-      Header, Services, About, Stocks,
-    }
+export default {
+  name: 'App',
+  components: {
+    Header, Services, About, Stocks, Doctors
   }
+}
 </script>
 
 <style lang="scss">

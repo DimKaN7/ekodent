@@ -138,6 +138,7 @@ export default {
           align-items: center;
           cursor: pointer;
           transition: background-color 0.3s ease-in-out;
+          user-select: none;
 
           &:hover {
             background-color: #4D8E4D;

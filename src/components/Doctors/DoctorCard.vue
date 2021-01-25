@@ -1,0 +1,98 @@
+<template>
+  <div class="doctor-card">
+    <div class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}"></div>
+    <div class="card-info">
+      <div class="card-info__name">
+        <span>{{doctor.name.split(' ')[0]}}</span> <span>{{doctor.name.split(' ')[1]}}</span>
+      </div>
+      <div class="card-info__position">{{doctor.position}}</div>
+      <div class="card-info__experience" v-if="doctor.experience">{{doctor.experience}}</div>
+    </div>
+    <div class="doctor-card__button">{{doctor.buttonText}}</div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'DoctorCard',
+  props: {
+    doctor: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.doctor-card {
+  width: 301px;
+  height: 395px;
+  position: relative;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__image {
+    position: absolute;
+    width: 253px;
+    height: 253px;
+    left: 24px;
+    top: -126.5px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .card-info {
+    width: 100%;
+    height: 136px;
+    margin-top: 153px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__name {
+      height: 56px;
+      font-size: 24px;
+      text-align: center;
+      
+      >span:first-child {
+        color:#E64243;
+      }
+    }
+
+    &__position {
+      margin-top: 15px;
+    }
+
+    &__experience {
+      margin-top: 23px;
+    }
+  }
+
+
+  &__button {
+    width: 232px;
+    height: 40px;
+    color: white;
+    background-color: #E64243;
+    border-radius: 100px;
+    margin-top: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    user-select: none;
+
+    &:hover {
+      background-color: #4D8E4D;
+    }
+  }
+}
+</style>

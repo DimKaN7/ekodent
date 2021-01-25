@@ -1,7 +1,7 @@
 <template>
-  <div class="stock-card" @mouseenter="hovered = true;" @mouseleave="hovered = false">
+  <div class="stock-card">
     <div class="stock-card__image">
-      <div :class="['image', hovered ? 'hovered' : '']" :style="{'background-image': `url(${stock.image})`}"></div>
+      <div class="image" :style="{'background-image': `url(${stock.image})`}"></div>
     </div>
     <div class="stock-card__title">{{stock.title}}</div>
     <div class="stock-card__button">{{stock.buttonText}}</div>
@@ -17,11 +17,6 @@ export default {
       required: true,
     }
   },
-  data() {
-    return {
-      hovered: false,
-    }
-  },
 }
 </script>
 
@@ -32,11 +27,14 @@ export default {
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   font-size: 36px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+
+  &:hover .image {
+    transform: scale(1.05);
+  }
 
   &__image {
     width: 100%;
@@ -51,10 +49,6 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       transition: transform 0.3s ease-in-out;
-
-      &.hovered {
-        transform: scale(1.05);
-      }
     }
   }
 
@@ -62,6 +56,8 @@ export default {
     width: 100%;
     text-align: center;
     margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 36px;
   }
 
   &__button {
@@ -77,6 +73,8 @@ export default {
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease-in-out;
+    user-select: none;
+    cursor: pointer;
 
     &:hover {
       background-color: #4D8E4D;

@@ -79,3 +79,30 @@ export const stocksStrings = {
     },
   ],
 }
+
+export const doctorsStrings = {
+  title: ['наши', 'врачи'],
+  doctors: [
+    {
+      image: require('../assets/Doctors/0.png'),
+      name: 'Халтубаева Юлия',
+      position: 'Стоматолог-ортодонт',
+      experience: '',
+      buttonText: 'ЗАПИСАТЬСЯ НА ПРИЕМ',
+    },
+    {
+      image: require('../assets/Doctors/1.png'),
+      name: 'Ткач Сергей',
+      position: 'Хирург, ортопед, имплантолог',
+      experience: 'Стаж работы: 15 лет',
+      buttonText: 'ЗАПИСАТЬСЯ НА ПРИЕМ',
+    },
+    {
+      image: require('../assets/Doctors/2.png'),
+      name: 'Мандарханова Александра',
+      position: 'Стоматолог, терапевт, ортопед',
+      experience: 'Стаж работы: 10 лет',
+      buttonText: 'ЗАПИСАТЬСЯ НА ПРИЕМ',
+    },
+  ],
+}
