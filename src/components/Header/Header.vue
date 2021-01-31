@@ -27,7 +27,7 @@ import Time from '../../assets/Header/Time.png';
 import Location from '../../assets/Header/Location.png';
 import Phone from '../../assets/Header/Phone.png';
 
-import InfoContent from './InfoContent/InfoContent';
+import InfoContent from './InfoContent';
 import {headerStrings} from '../../tools/strings';
 
 export default {

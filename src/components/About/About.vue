@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import AboutCard from './AboutCard/AboutCard';
+import AboutCard from './AboutCard';
 
 import {aboutStrings} from '../../tools/strings';
 import Background from '../../assets/About/Background.png';
