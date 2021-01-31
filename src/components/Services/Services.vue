@@ -52,7 +52,7 @@ export default {
       font-size: 36px;
 
       >span:last-child {
-        color: #E64243;
+        color: $bgred;
       }
     }
 

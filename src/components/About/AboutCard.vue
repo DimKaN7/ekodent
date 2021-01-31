@@ -32,7 +32,7 @@ export default {
 
   &__number {
     flex: 0 0 54px;
-    color: #4D8E4D;
+    color: $bggreen;
     font-size: 96px;
     line-height: 75px;
     margin-right: 3px;
@@ -40,7 +40,7 @@ export default {
 
   &__content {
     flex: 1 0 230px;
-    background: rgba(0, 0, 0, 0.2);
+    background: $bgblack;
     border-radius: 5px;
     padding: 16px 0 0 20px;
     font-size: 24px;
@@ -54,7 +54,7 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #E64243;
+      background-color: $bgred;
     }
   }
 }

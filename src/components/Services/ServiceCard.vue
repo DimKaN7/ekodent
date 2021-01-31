@@ -36,8 +36,8 @@ export default {
   }
 
   &:hover {
-    background-color: #4D8E4D;
-    color: white;
+    background-color: $bggreen;
+    color: $bgwhite;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   }
 

@@ -50,7 +50,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, #FFFFFF 46.93%, rgba(255, 255, 255, 0) 118.65%);
+    background: linear-gradient(180deg, $bgwhite 46.93%, $bgblack);
   }
 
   .about {
@@ -71,7 +71,7 @@ export default {
       margin-bottom: 98.33px;
 
       >span:first-child {
-        color: #E64243;
+        color: $bgred;
       }
     }
 

@@ -54,7 +54,7 @@ export default {
 
     >a {
       text-decoration: none;
-      color: black;
+      color: $bgblack;
 
       &:hover {
         text-decoration: underline;

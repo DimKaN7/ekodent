@@ -61,7 +61,7 @@ export default {
       text-align: center;
       
       >span:first-child {
-        color:#E64243;
+        color:$bgblack;
       }
     }
 
@@ -78,8 +78,8 @@ export default {
   &__button {
     width: 232px;
     height: 40px;
-    color: white;
-    background-color: #E64243;
+    color: $bgwhite;
+    background-color: $bgred;
     border-radius: 100px;
     margin-top: 42px;
     display: flex;
@@ -91,7 +91,7 @@ export default {
     user-select: none;
 
     &:hover {
-      background-color: #4D8E4D;
+      background-color: $bggreen;
     }
   }
 }

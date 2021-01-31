@@ -12,7 +12,7 @@
         <div class="advantages-container">
             <div class="advantages">
                 <div class="advantage" v-for="(a,index) in previewStrings.advantages" :key="index">
-                    <div class="advantage__icon" :style="{backgroundImage: `url(${getImage(index)})`}"></div>
+                    <div class="advantage__icon" :style="{backgroundImage: `url(${a.Image})`}"></div>
                     <div class="advantage__text">{{a.text}}</div>
                 </div>
             </div>
@@ -30,11 +30,6 @@ export default {
             Background, previewStrings
         }
     },
-    methods: {
-        getImage(index) {
-            return require(`../../assets/Preview/${index}.png`);
-        }
-    }
 
 }
 </script>
@@ -43,7 +38,7 @@ export default {
 .preview-container {
     width: 100%;
     height: 840px;
-    background-color: #fff;
+    background-color: $bgwhite;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,7 +58,7 @@ export default {
             top: 0;
             left: 0;
             position: absolute;
-            background: linear-gradient(180deg, #FFFFFF 14.24%, rgba(255, 255, 255, 0) 80.19%);
+            background: linear-gradient(180deg, $bgwhite 14.24%, $bgblack 80.19%);
         }
 
         &__description {
@@ -92,7 +87,7 @@ export default {
     .advantages-container {
         width: 100%;
         height: 180px;
-        background-color: #4D8E4D;
+        background-color: $bggreen;
         display: flex;
         justify-content: center;
 
@@ -105,6 +100,7 @@ export default {
             justify-content: space-between;
             align-items: center;
             padding-top: 15px;
+            padding-bottom: 15px;
 
             .advantage {
                 height: 100%;

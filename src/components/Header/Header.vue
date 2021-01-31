@@ -52,12 +52,13 @@ export default {
 .header-container {
   width: 100%;
   height: 140px;
-  background-color: #fff;
+  background-color: $bgwhite;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
 
   .header {
     width: 1267px;
@@ -109,11 +110,11 @@ export default {
           align-items: center;
 
           &:hover {
-            color: #E64243;
+            color: $bgred;
           }
 
           &.selected {
-            color: #E64243;
+            color: $bgred;
 
             &::after {
               position: absolute;
@@ -122,7 +123,7 @@ export default {
               content: "";
               width: 100%;
               height: 2px;
-              background-color: #E64243;
+              background-color: $bgred;
             }
           }
         }
@@ -130,9 +131,9 @@ export default {
         .sign-up {
           width: 243px;
           height: 40px;
-          background-color: #E64243;
+          background-color: $bgred;
           border-radius: 100px;
-          color: white;
+          color: $bgwhite;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -141,7 +142,7 @@ export default {
           user-select: none;
 
           &:hover {
-            background-color: #4D8E4D;
+            background-color: $bggreen;
           }
         }
       }

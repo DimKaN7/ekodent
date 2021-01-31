@@ -17,6 +17,36 @@ export const headerStrings = [
   }
 ];
 
+export const previewStrings = {
+  descriptions: ['Доступная стоматология в Иркутске','В стоматологической клинике Эко-Дент есть ответы на (почти) все вопросы, касающиеся безболезненного, быстрого, профессионального, эффективного лечения зубов, десен, различных патологий челюстно-лицевой области.'],
+  advantages: [
+      {
+          image: require(`../assets/Preview/0.png`),
+          text: 'Клинике Эко-Дент более 15 лет'
+      },
+      {
+          image: require(`../assets/Preview/1.png`),
+          text: 'Современное оборудование'
+      },
+      {
+          image: require(`../assets/Preview/2.png`),
+          text: 'Качественные материалы'
+      },
+      {
+          image: require(`../assets/Preview/3.png`),
+          text: 'Современное зуботехническая лаборатория'
+      },
+      {
+          image: require(`../assets/Preview/4.png`),
+          text: 'Бережное отношение к пациентам'
+      },
+      {
+          image: require(`../assets/Preview/5.png`),
+          text: 'Удобный график'
+      },
+  ]
+}
+
 export const servicesStrings = {
   title: ['наши', 'услуги'],
   cards: [
