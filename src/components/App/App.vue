@@ -1,24 +1,26 @@
 <template>
   <div class="app">
     <Header />
-    <Preview />
     <Services />
     <About />
+    <Stocks />
+    <Doctors />
   </div>
 </template>
 
 <script>
-  import Header from '../Header/Header';
-  import Preview from '../Preview/Preview';
-  import Services from '../Services/Services';
-  import About from '../About/About';
+import Header from '../Header/Header';
+import Services from '../Services/Services';
+import About from '../About/About';
+import Stocks from '../Stocks/Stocks';
+import Doctors from '../Doctors/Doctors';
 
-  export default {
-    name: 'App',
-    components: {
-      Header, Preview, Services, About
-    }
+export default {
+  name: 'App',
+  components: {
+    Header, Services, About, Stocks, Doctors
   }
+}
 </script>
 
 <style lang="scss">

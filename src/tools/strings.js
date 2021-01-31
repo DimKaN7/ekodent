@@ -21,35 +21,35 @@ export const servicesStrings = {
   title: ['наши', 'услуги'],
   cards: [
     {
-      imageIndex: 0,
+      image: require(`../assets/Services/0.png`),
       title: 'ТЕРАПИЯ',
     },
     {
-      imageIndex: 1,
+      image: require(`../assets/Services/1.png`),
       title: 'ДЕНТАЛЬНАЯ ИМПЛАНТАЦИЯ',
     },
     {
-      imageIndex: 2,
+      image: require(`../assets/Services/2.png`),
       title: 'ПАРОДОНТОЛОГИЯ',
     },
     {
-      imageIndex: 3,
+      image: require(`../assets/Services/3.png`),
       title: 'ДЕТСКАЯ СТОМАТОЛОГИЯ',
     },
     {
-      imageIndex: 4,
+      image: require(`../assets/Services/4.png`),
       title: 'ДЕТСКАЯ СТОМАТОЛОГИЯ',
     },
     {
-      imageIndex: 5,
+      image: require(`../assets/Services/5.png`),
       title: 'ПРОТЕЗИРОВАНИЕ',
     },
     {
-      imageIndex: 6,
+      image: require(`../assets/Services/6.png`),
       title: 'ФИЗИОЛЕЧЕНИЕ',
     },
     {
-      imageIndex: 7,
+      image: require(`../assets/Services/7.png`),
       title: 'ОРТОДОНТИЯ',
     }
   ],
@@ -64,32 +64,45 @@ export const aboutStrings = {
   ],
 }
 
-export const previewStrings = {
-  descriptions: ['Доступная стоматология в Иркутске','В стоматологической клинике Эко-Дент есть ответы на (почти) все вопросы, касающиеся безболезненного, быстрого, профессионального, эффективного лечения зубов, десен, различных патологий челюстно-лицевой области.'],
-  advantages: [
-      {
-          icon: 0,
-          text: 'Клинике Эко-Дент более 15 лет'
-      },
-      {
-          icon: 1,
-          text: 'Современное оборудование'
-      },
-      {
-          icon: 2,
-          text: 'Качественные материалы'
-      },
-      {
-          icon: 3,
-          text: 'Современное зуботехническая лаборатория'
-      },
-      {
-          icon: 4,
-          text: 'Бережное отношение к пациентам'
-      },
-      {
-          icon: 5,
-          text: 'Удобный график'
-      },
-  ]
+export const stocksStrings = {
+  title: ['наши', 'акции'],
+  stocks: [
+    {
+      image: require('../assets/Stocks/Stocks/0.png'),
+      title: 'AIR PROPHY UNIT + KAVA = ВКУСНО!',
+      buttonText: 'Узнать подробнее',
+    },
+    {
+      image: require('../assets/Stocks/Stocks/1.png'),
+      title: 'Подарок ко Дню рождения!',
+      buttonText: 'Узнать подробнее',
+    },
+  ],
+}
+
+export const doctorsStrings = {
+  title: ['наши', 'врачи'],
+  doctors: [
+    {
+      image: require('../assets/Doctors/0.png'),
+      name: 'Халтубаева Юлия',
+      position: 'Стоматолог-ортодонт',
+      experience: '',
+      buttonText: 'ЗАПИСАТЬСЯ НА ПРИЕМ',
+    },
+    {
+      image: require('../assets/Doctors/1.png'),
+      name: 'Ткач Сергей',
+      position: 'Хирург, ортопед, имплантолог',
+      experience: 'Стаж работы: 15 лет',
+      buttonText: 'ЗАПИСАТЬСЯ НА ПРИЕМ',
+    },
+    {
+      image: require('../assets/Doctors/2.png'),
+      name: 'Мандарханова Александра',
+      position: 'Стоматолог, терапевт, ортопед',
+      experience: 'Стаж работы: 10 лет',
+      buttonText: 'ЗАПИСАТЬСЯ НА ПРИЕМ',
+    },
+  ],
 }

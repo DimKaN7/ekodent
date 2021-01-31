@@ -7,7 +7,7 @@
       </div>
       <div class="services__cards">
         <ServiceCard v-for="(card, index) in servicesStrings.cards" :key="index" 
-          :imageIndex="card.imageIndex" 
+          :image="card.image" 
           :title="card.title"/>
       </div>
     </div>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ServiceCard from './ServiceCard/ServiceCard';
+import ServiceCard from './ServiceCard';
 
 import {servicesStrings} from '../../tools/strings';
 
