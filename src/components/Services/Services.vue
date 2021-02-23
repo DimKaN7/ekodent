@@ -50,6 +50,7 @@ export default {
     .title {
       text-transform: uppercase;
       font-size: 36px;
+      user-select: none;
 
       >span:last-child {
         color: #E64243;

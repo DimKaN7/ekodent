@@ -31,6 +31,7 @@ export default {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  user-select: none;
 
   &:hover .image {
     transform: scale(1.05);

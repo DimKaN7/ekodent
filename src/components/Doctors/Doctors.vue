@@ -23,7 +23,6 @@ import {doctorsStrings} from '../../tools/strings';
 export default {
   name: 'Doctors',
   components: {
-    // Arrow, 
     DoctorCard, 
     ArrowSlider
   },
@@ -54,6 +53,7 @@ export default {
       margin-bottom: 71.5px;
       text-transform: uppercase;
       font-size: 36px;
+      user-select: none;
 
       >span:last-child {
         color:#E64243;
@@ -65,13 +65,6 @@ export default {
       height: 100%;
       display: flex;
       flex-direction: row;
-
-      .cards {
-        flex: 1 0 auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
     }
   }
 }
