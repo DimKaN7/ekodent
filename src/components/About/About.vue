@@ -50,7 +50,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, $bgwhite 46.93%, $bgblack);
+    background: linear-gradient(180deg, #FFFFFF 46.93%, rgba(255, 255, 255, 0) 118.65%);
   }
 
   .about {

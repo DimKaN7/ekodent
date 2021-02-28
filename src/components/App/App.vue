@@ -5,22 +5,27 @@
     <Services />
     <About />
     <Stocks />
+    <Recommend />
     <Doctors />
+    <Director />
   </div>
 </template>
 
 <script>
 import Header from '../Header/Header';
-import Preview from '../Preview/Preview'
+import Preview from '../Preview/Preview';
 import Services from '../Services/Services';
 import About from '../About/About';
 import Stocks from '../Stocks/Stocks';
 import Doctors from '../Doctors/Doctors';
+import Recommend from '../Recommend/Recommend.vue';
+import Director from '../Director/Director';
 
 export default {
   name: 'App',
   components: {
-    Header, Preview, Services, About, Stocks, Doctors
+    Header, Preview, Services, About, Stocks, Doctors,
+    Recommend, Director
   }
 }
 </script>

@@ -2,17 +2,17 @@
     <div class="preview-container">
         <div class="preview" :style="{backgroundImage: `url(${Background})`}">
             <div class="preview__gradient"></div>
-                <div class="preview__description">
-                    <div class="preview-text" v-for="(d,index) in previewStrings.descriptions" :key="index">
-                        {{d}}
-                    </div>
-            </div>
+            <div class="preview__description">
+                <div class="preview-text" v-for="(d,index) in previewStrings.descriptions" :key="index">
+                    {{d}}
+                </div>
+        </div>
 
         </div>
         <div class="advantages-container">
             <div class="advantages">
                 <div class="advantage" v-for="(a,index) in previewStrings.advantages" :key="index">
-                    <div class="advantage__icon" :style="{backgroundImage: `url(${a.Image})`}"></div>
+                    <div class="advantage__icon" :style="{backgroundImage: `url(${a.image})`}"></div>
                     <div class="advantage__text">{{a.text}}</div>
                 </div>
             </div>
@@ -58,7 +58,7 @@ export default {
             top: 0;
             left: 0;
             position: absolute;
-            background: linear-gradient(180deg, $bgwhite 14.24%, $bgblack 80.19%);
+            background: linear-gradient(180deg, #FFFFFF 14.24%, rgba(255, 255, 255, 0) 80.19%);
         }
 
         &__description {
