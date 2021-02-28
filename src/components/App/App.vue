@@ -6,6 +6,7 @@
     <Stocks />
     <Doctors />
     <Reviews />
+    <Footer />
   </div>
 </template>
 
@@ -16,11 +17,12 @@ import About from '../About/About';
 import Stocks from '../Stocks/Stocks';
 import Doctors from '../Doctors/Doctors';
 import Reviews from '../Reviews/Reviews';
+import Footer from '../Footer/Footer';
 
 export default {
   name: 'App',
   components: {
-    Header, Services, About, Stocks, Doctors, Reviews
+    Header, Services, About, Stocks, Doctors, Reviews, Footer
   }
 }
 </script>

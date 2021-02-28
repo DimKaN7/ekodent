@@ -127,3 +127,99 @@ export const reviewsStrings = {
     },
   ],
 }
+
+export const footerStrings = {
+  columns: [
+    {
+      title: 'Сервис',
+      content: [
+        {
+          type: 'link',
+          title: 'О клинике',
+          href: '#',
+        },
+        {
+          type: 'link',
+          title: 'Вакансии',
+          href: '#',
+        },
+        {
+          type: 'link',
+          title: 'Сертификаты и лицензии',
+          href: '#',
+        }
+      ]
+    },
+
+    {
+      title: 'Пациенту',
+      content: [
+        {
+          type: 'link',
+          title: 'Врачи',
+          href: '#',
+        },
+        {
+          type: 'link',
+          title: 'Услуги',
+          href: '#',
+        },
+        {
+          type: 'link',
+          title: 'Акции',
+          href: '#',
+        },
+        {
+          type: 'link',
+          title: 'Новости',
+          href: '#',
+        },
+        {
+          type: 'link',
+          title: 'Вопросы',
+          href: '#',
+        },
+        {
+          type: 'link',
+          title: 'Отзывы',
+          href: '#',
+        },
+        {
+          type: 'link',
+          title: 'Справочник',
+          href: '#',
+        }
+      ]
+    },
+
+    {
+      title: 'Контакты',
+      content: [
+        {
+          type: 'phone',
+          title: '+7 (3952) 252-712',
+          href: 'tel:+73952252712'
+        },
+        {
+          type: 'phone',
+          title: '+7 (3952) 251-651',
+          href: 'tel:+73952251651'
+        },
+        {
+          type: 'phone',
+          title: '+7 (924) 613-69-00',
+          href: 'tel:+79246136900'
+        },
+        {
+          type: 'text',
+          title: 'г. Иркутск ул. Декабрьских Событий 109',
+        },
+        {
+          type: 'link',
+          title: 'eko-dent2001@mail.ru',
+          href: 'mailto:eko-dent2001@mail.ru'
+        }
+      ]
+    }
+  ]
+}
