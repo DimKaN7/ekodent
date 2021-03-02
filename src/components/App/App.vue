@@ -8,6 +8,8 @@
     <Recommend />
     <Doctors />
     <Director />
+    <Reviews />
+    <Footer />
   </div>
 </template>
 
@@ -20,12 +22,13 @@ import Stocks from '../Stocks/Stocks';
 import Doctors from '../Doctors/Doctors';
 import Recommend from '../Recommend/Recommend.vue';
 import Director from '../Director/Director';
+import Reviews from '../Reviews/Reviews';
+import Footer from '../Footer/Footer';
 
 export default {
   name: 'App',
   components: {
-    Header, Preview, Services, About, Stocks, Doctors,
-    Recommend, Director
+    Header, Preview, Services, About, Stocks, Doctors, Recommend, Director, Reviews, Footer
   }
 }
 </script>

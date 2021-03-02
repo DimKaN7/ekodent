@@ -122,7 +122,7 @@ export default {
                 &__text {
                     font-size: 18px;
                     text-align: center;
-                    // color: white;
+                    color: white;
 
                 }
             }

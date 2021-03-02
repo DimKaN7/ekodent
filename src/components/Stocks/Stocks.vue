@@ -5,11 +5,10 @@
         <span>{{stocksStrings.title[0]}}</span> <span>{{stocksStrings.title[1]}}</span>
       </div>
       <div class="stocks__cards">
-        <Arrow left/>
-        <div class="cards">
+        <ArrowSlider :itemWidth="535" :itemsCount="stocksStrings.stocks.length + 2">
           <StockCard v-for="(stock, index) in stocksStrings.stocks" :key="index" :stock="stock"/>
-        </div>
-        <Arrow />
+          <StockCard v-for="(stock, index) in stocksStrings.stocks" :key="index + 2" :stock="stock"/>
+        </ArrowSlider>
       </div>
     </div>
   </div>
@@ -17,20 +16,20 @@
 
 <script>
 import StockCard from './StockCard';
-import Arrow from '../Arrow/Arrow';
+import ArrowSlider from '../ArrowSlider/ArrowSlider';
 
 import {stocksStrings} from '../../tools/strings';
 
 export default {
   name: 'Stocks',
   components: {
-    StockCard, Arrow,
+    StockCard, ArrowSlider,
   },
   data() {
     return {
       stocksStrings,
     }
-  }
+  },
 }
 </script>
 
@@ -50,9 +49,10 @@ export default {
     align-items: center;
 
     &__title {
-      margin-bottom: 89px;
+      margin-bottom: 80px;
       text-transform: uppercase;
       font-size: 36px;
+      user-select: none;
 
       >span:last-child {
         color:$bgred;

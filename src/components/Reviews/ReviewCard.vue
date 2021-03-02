@@ -1,24 +1,24 @@
 <template>
-  <div class="doctor-card">
-    <div class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}"></div>
-    <div class="doctor-card__info">
+  <div class="review-card">
+    <div class="review-card__image"></div>
+    <div class="review-card__info">
       <div class="card-info">
-        <div class="card-info__name">
-          <span>{{doctor.name.split(' ')[0]}}</span> <span>{{doctor.name.split(' ')[1]}}</span>
+        <div class="card-info__title">
+          <span>{{review.title}}</span>
         </div>
-        <div class="card-info__position">{{doctor.position}}</div>
-        <div class="card-info__experience" v-if="doctor.experience">{{doctor.experience}}</div>
+        <div class="card-info__message">{{review.message}}</div>
+        <!-- <div class="card-info__experience" v-if="review.experience">{{review.experience}}</div> -->
       </div>
-      <div class="card-info__button">{{doctor.buttonText}}</div>
+      <div class="card-info__button">{{review.buttonText}}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DoctorCard',
+  name: 'ReviewCard',
   props: {
-    doctor: {
+    review: {
       type: Object,
       required: true,
     }
@@ -27,9 +27,9 @@ export default {
 </script>
 
 <style lang="scss">
-.doctor-card {
+.review-card {
   width: 301px;
-  height: 521.5px;
+  height: 634px;
   position: relative;
   // box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -38,51 +38,48 @@ export default {
   user-select: none;
 
   &__image {
-    width: 253px;
-    height: 253px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 2;
+    background-color: $bggreen;
   }
 
   &__info {
     width: 100%;
-    height: 395px;
+    height: 599px;
     position: absolute;
     left: 0;
-    top: 126.5px;
+    top: 35px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 90px 17px 105px;
 
     .card-info {
       width: 100%;
-      height: 136px;
-      margin-top: 153px;
+      height: 364px;
       font-size: 18px;
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      &__name {
-        height: 56px;
-        font-size: 24px;
+      &__title {
+        font-size: 20px;
         text-align: center;
-        
-        >span:first-child {
-          color: $bgred;
-        }
+        font-weight: 700;
       }
 
-      &__position {
-        margin-top: 15px;
-      }
-
-      &__experience {
-        margin-top: 23px;
+      &__message {
+        font-size: 14px;
+        height: 100%;
+        margin-top: 38px;
+        text-align: center;
+        overflow-y: auto;
       }
 
       &__button {
@@ -91,7 +88,7 @@ export default {
         color: $bgwhite;
         background-color: $bgred;
         border-radius: 100px;
-        margin-top: 42px;
+        margin-top: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -106,6 +103,5 @@ export default {
       }
     }
   }
-
 }
 </style>

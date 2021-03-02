@@ -30,6 +30,7 @@ export default {
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  user-select: none;
 
   &:hover &__image {
     transform: scale(1.05);
