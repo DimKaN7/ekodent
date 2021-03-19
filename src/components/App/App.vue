@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app" ref="app">
     <Header />
     <Services />
     <About />
@@ -7,6 +7,7 @@
     <Doctors />
     <Reviews />
     <Footer />
+    <ScrollUp v-if="scrollIndex >= 227" />
   </div>
 </template>
 
@@ -18,11 +19,29 @@ import Stocks from '../Stocks/Stocks';
 import Doctors from '../Doctors/Doctors';
 import Reviews from '../Reviews/Reviews';
 import Footer from '../Footer/Footer';
+import ScrollUp from '../ScrollUp/ScrollUp';
 
 export default {
   name: 'App',
   components: {
-    Header, Services, About, Stocks, Doctors, Reviews, Footer
+    Header, Services, About, Stocks, Doctors, Reviews, Footer, ScrollUp
+  },
+  methods: {
+    onScroll() {
+      this.scrollIndex = window.scrollY;
+      console.log(this.scrollIndex);
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.onScroll);
+  },
+  data() {
+    return {
+      scrollIndex: 0,
+    }
   }
 }
 </script>
@@ -49,5 +68,6 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
     height: 100%;
+    scroll-behavior: smooth;
   }
 </style>
