@@ -1,6 +1,6 @@
 <template>
   <transition appear name="fade">
-    <div class="scrollup">
+    <div class="scrollup" @click="onClick">
       <div :style="{'background-image': `url(${arrowup})`}"></div>
     </div>
   </transition>
@@ -13,6 +13,14 @@ export default {
   data() {
     return {
       arrowup,
+    }
+  },
+  methods: {
+    onClick() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
     }
   }
 }

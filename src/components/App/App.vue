@@ -1,6 +1,6 @@
 <template>
-  <div class="app" ref="app">
-    <Header />
+  <div class="app">
+    <Header :scrolled='scrollIndex >= 227'/>
     <Services />
     <About />
     <Stocks />
@@ -29,7 +29,6 @@ export default {
   methods: {
     onScroll() {
       this.scrollIndex = window.scrollY;
-      console.log(this.scrollIndex);
     }
   },
   created() {

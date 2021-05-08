@@ -1,7 +1,18 @@
 <template>
   <div class="doctor-card">
-    <div class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}"></div>
-    <div class="doctor-card__info">
+    <div 
+      data-aos="zoom-in"
+      data-aos-duration="300"
+      data-aos-once="true"
+      data-aos-anchor=".doctors__title"
+      class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}"></div>
+    <div 
+      data-aos="fade"
+      data-aos-duration="1000"
+      data-aos-delat="300"
+      data-aos-once="true"
+      data-aos-anchor=".doctor-card__image"
+      class="doctor-card__info">
       <div class="card-info">
         <div class="card-info__name">
           <span>{{doctor.name.split(' ')[0]}}</span> <span>{{doctor.name.split(' ')[1]}}</span>

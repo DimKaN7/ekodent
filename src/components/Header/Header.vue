@@ -1,7 +1,9 @@
 <template>
-  <div class="header-container">
+  <div 
+    data-aos="fade-down"
+    data-aos-duration="300"
+    :class="['header-container', scrolled && 'scrolled']" >
     <div class="header">
-
       <div class="info">
         <a class="info__logo" href="#"></a>
         <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="headerStrings[index].texts" 
@@ -16,7 +18,6 @@
           <div class="sign-up">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -34,6 +35,12 @@ export default {
   name: 'Header',
   components: {
     InfoContent,
+  },
+  props: {
+    scrolled: {
+      type: Boolean,
+      required: true,
+    }
   },
   data() {
     return {
@@ -58,6 +65,14 @@ export default {
   align-items: center;
   position: relative;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+
+  &.scrolled {
+    transform: translateY(-84px) !important;
+  }
 
   .header {
     width: 1267px;
@@ -69,6 +84,7 @@ export default {
     .info {
       width: 100%;
       height: 84px;
+      flex: 0 0 84px;
       position: relative;
       display: flex;
       flex-direction: row;
@@ -87,9 +103,10 @@ export default {
 
     .menu {
       width: 100%;
+      height: 56px;
+      flex: 0 0 56px;
       display: flex;
       flex-direction: row;
-      flex: 1 0 auto;
       align-items: center;
 
       &-items {

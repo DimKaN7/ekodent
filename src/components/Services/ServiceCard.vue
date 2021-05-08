@@ -1,5 +1,5 @@
 <template>
-  <div class="service-card">
+  <div class="service-card" >
     <div class="service-card__image" :style="{'background-image': `url(${image})`}"></div>
     <div class="service-card__title">{{title}}</div>
   </div>

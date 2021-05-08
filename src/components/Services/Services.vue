@@ -1,5 +1,7 @@
 <template>
-  <div class="services-container">
+  <div data-aos="fade"
+       data-aos-duration="1000" 
+       class="services-container">
     <div class="services">
       <div class="title">
         <span>{{servicesStrings.title[0]}} </span>
@@ -35,14 +37,14 @@ export default {
 <style lang="scss">
 .services-container {
   width: 100%;
-  height: 966px;
+  height: 1106px;
   display: flex;
   justify-content: center;
 
   .services {
     width: 1267px;
     height: 100%;
-    padding: 100px 0;
+    padding: 240px 0 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
