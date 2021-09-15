@@ -1,22 +1,26 @@
 <template>
   <div class="header-container">
-    <div class="header">
+    <div
+        data-aos="fade-down"
+        data-aos-duration="300"
+        :class="['header-container', scrolled && 'scrolled']" >
+      <div class="header">
 
-      <div class="info">
-        <a class="info__logo" href="#"></a>
-        <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="headerStrings[index].texts" 
-          :hrefs="headerStrings[index].hrefs" :styles="index === 3 ? 'font-weight: 500; font-size: 18px;' : ''"/>
-      </div>
+        <div class="info">
+          <a class="info__logo" href="#"></a>
+          <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="headerStrings[index].texts"
+            :hrefs="headerStrings[index].hrefs" :styles="index === 3 ? 'font-weight: 500; font-size: 18px;' : ''"/>
+        </div>
 
-      <div class="menu">
-        <div class="menu-items">
-          <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item">
-            {{item}}
+        <div class="menu">
+          <div class="menu-items">
+            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item">
+              {{item}}
+            </div>
+            <div class="sign-up">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
           </div>
-          <div class="sign-up">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -35,6 +39,12 @@ export default {
   components: {
     InfoContent,
   },
+  props: {
+    scrolled: {
+      type: Boolean,
+      required: true,
+    }
+  },
   data() {
     return {
       icons: [Mail, Time, Location, Phone],
@@ -52,13 +62,20 @@ export default {
 .header-container {
   width: 100%;
   height: 140px;
-  background-color: $bgwhite;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 2;
+  position: fixed;
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+
+  &.scrolled {
+    transform: translateY(-84px) !important;
+  }
 
   .header {
     width: 1267px;
@@ -70,6 +87,7 @@ export default {
     .info {
       width: 100%;
       height: 84px;
+      flex: 0 0 84px;
       position: relative;
       display: flex;
       flex-direction: row;
@@ -88,9 +106,10 @@ export default {
 
     .menu {
       width: 100%;
+      height: 56px;
+      flex: 0 0 56px;
       display: flex;
       flex-direction: row;
-      flex: 1 0 auto;
       align-items: center;
 
       &-items {
@@ -110,11 +129,11 @@ export default {
           align-items: center;
 
           &:hover {
-            color: $bgred;
+            color: #E64243;
           }
 
           &.selected {
-            color: $bgred;
+            color: #E64243;
 
             &::after {
               position: absolute;
@@ -123,7 +142,7 @@ export default {
               content: "";
               width: 100%;
               height: 2px;
-              background-color: $bgred;
+              background-color: #E64243;
             }
           }
         }
@@ -131,9 +150,9 @@ export default {
         .sign-up {
           width: 243px;
           height: 40px;
-          background-color: $bgred;
+          background-color: #E64243;
           border-radius: 100px;
-          color: $bgwhite;
+          color: white;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -142,7 +161,7 @@ export default {
           user-select: none;
 
           &:hover {
-            background-color: $bggreen;
+            background-color: #4D8E4D;
           }
         }
       }

@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Header />
+    <Header :scrolled='scrollIndex >= 227'/>
     <Preview />
     <Services />
     <About />
@@ -10,6 +10,7 @@
     <Director />
     <Reviews />
     <Footer />
+    <ScrollUp v-if="scrollIndex >= 227" />
   </div>
 </template>
 
@@ -24,11 +25,28 @@ import Recommend from '../Recommend/Recommend.vue';
 import Director from '../Director/Director';
 import Reviews from '../Reviews/Reviews';
 import Footer from '../Footer/Footer';
+import ScrollUp from '../ScrollUp/ScrollUp';
 
 export default {
   name: 'App',
   components: {
-    Header, Preview, Services, About, Stocks, Doctors, Recommend, Director, Reviews, Footer
+    Header, Services, About, Stocks, Doctors, Reviews, Footer, ScrollUp
+  },
+  methods: {
+    onScroll() {
+      this.scrollIndex = window.scrollY;
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.onScroll);
+  },
+  data() {
+    return {
+      scrollIndex: 0,
+    }
   }
 }
 </script>
@@ -55,5 +73,6 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
     height: 100%;
+    scroll-behavior: smooth;
   }
 </style>

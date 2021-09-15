@@ -45,7 +45,7 @@ export default {
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 2;
-    background-color: $bggreen;
+    background-color: #4D8E4D;
   }
 
   &__info {
@@ -85,8 +85,8 @@ export default {
       &__button {
         width: 232px;
         height: 40px;
-        color: $bgwhite;
-        background-color: $bgred;
+        color: white;
+        background-color: #E64243;
         border-radius: 100px;
         margin-top: 10px;
         display: flex;
@@ -98,7 +98,7 @@ export default {
         user-select: none;
 
         &:hover {
-          background-color: $bggreen;
+          background-color: #4D8E4D;
         }
       }
     }

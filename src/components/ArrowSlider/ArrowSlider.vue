@@ -1,5 +1,5 @@
 <template>
-  <div class="arrow-slider-container" >
+  <div class="arrow-slider-container">
     <Arrow left :arrowStyles="arrowStyles" @arrowClick="onClick" :show="isShown(true)"/>
     <div class="arrow-slider">
       <div class="slider" :style="{'width': `${sliderWidth}px`, 'left': `-${scrollIndex * (itemWidth + spaceBetween)}px`}">
@@ -83,7 +83,7 @@ export default {
     flex: 1 0 auto;
     max-width: 1147px;
     height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 0 17px;
     position: relative;
 

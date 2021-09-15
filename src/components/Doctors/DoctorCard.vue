@@ -2,6 +2,19 @@
   <div class="doctor-card">
     <div class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}"></div>
     <div class="doctor-card__info">
+    <div
+      data-aos="zoom-in"
+      data-aos-duration="300"
+      data-aos-once="true"
+      data-aos-anchor=".doctors__title"
+      class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}"></div>
+    <div 
+      data-aos="fade"
+      data-aos-duration="1000"
+      data-aos-delat="300"
+      data-aos-once="true"
+      data-aos-anchor=".doctor-card__image"
+      class="doctor-card__info">
       <div class="card-info">
         <div class="card-info__name">
           <span>{{doctor.name.split(' ')[0]}}</span> <span>{{doctor.name.split(' ')[1]}}</span>
@@ -73,7 +86,7 @@ export default {
         text-align: center;
         
         >span:first-child {
-          color: $bgred;
+          color:#E64243;
         }
       }
 
@@ -88,8 +101,8 @@ export default {
       &__button {
         width: 232px;
         height: 40px;
-        color: $bgwhite;
-        background-color: $bgred;
+        color: white;
+        background-color: #E64243;
         border-radius: 100px;
         margin-top: 42px;
         display: flex;
@@ -101,7 +114,7 @@ export default {
         user-select: none;
 
         &:hover {
-          background-color: $bggreen;
+          background-color: #4D8E4D;
         }
       }
     }
