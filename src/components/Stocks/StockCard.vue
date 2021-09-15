@@ -64,8 +64,8 @@ export default {
   &__button {
     width: 240px;
     height: 40px;
-    background-color: $bgred;
-    color: $bgwhite;
+    background-color: #E64243;
+    color: white;
     margin: 46px 0 25px 0;
     border-radius: 100px;
     font-size: 18px;
@@ -78,7 +78,7 @@ export default {
     cursor: pointer;
 
     &:hover {
-      background-color: $bggreen;
+      background-color: #4D8E4D;
     }
   }
 }

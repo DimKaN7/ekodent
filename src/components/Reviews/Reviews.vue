@@ -2,12 +2,30 @@
   <div class="reviews-container">
     <div class="reviews">
       <div class="reviews__title">
-        <span>{{reviewsStrings.title[0]}}</span> <span>{{reviewsStrings.title[1]}}</span>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="300"
+          data-aos-once="true"
+          class="reviews__title">
+          <span>{{reviewsStrings.title[0]}}</span> <span>{{reviewsStrings.title[1]}}</span>
+        </div>
       </div>
       <div class="reviews__cards">
         <ArrowSlider arrowStyles="padding-top: 35px;" :itemWidth="301" :itemsCount="reviewsStrings.reviews.length * 2">
-          <ReviewCard v-for="(review, index) in reviewsStrings.reviews" :key="index" :review="review"/>
-          <ReviewCard v-for="(review, index) in reviewsStrings.reviews" :key="index + 3" :review="review"/>
+          <ReviewCard
+            data-aos="fade-up"
+            data-aos-duration="300"
+            data-aos-delay="300"
+            data-aos-once="true"
+            data-aos-anchor=".reviews__title"
+            v-for="(review, index) in reviewsStrings.reviews" :key="index" :review="review"/>
+          <ReviewCard
+            data-aos="fade-up"
+            data-aos-duration="300"
+            data-aos-delay="300"
+            data-aos-once="true"
+            data-aos-anchor=".reviews__title"
+            v-for="(review, index) in reviewsStrings.reviews" :key="index + 3" :review="review"/>
         </ArrowSlider>
       </div>
     </div>
@@ -55,7 +73,7 @@ export default {
       user-select: none;
 
       >span:last-child {
-        color:$bgred;
+        color:#E64243;
       }
     }
 

@@ -1,19 +1,38 @@
 <template>
   <div class="app">
-    <Header />
+    <Header :scrolled='scrollIndex >= 227'/>
     <router-view></router-view>
     <Footer />
+    <ScrollUp v-if="scrollIndex >= 227" />
   </div>
 </template>
 
 <script>
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import ScrollUp from '../ScrollUp/ScrollUp';
+
 
 export default {
   name: 'App',
   components: {
-    Header, Footer
+    Header, Footer, ScrollUp
+  },
+  methods: {
+    onScroll() {
+      this.scrollIndex = window.scrollY;
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.onScroll);
+  },
+  data() {
+    return {
+      scrollIndex: 0,
+    }
   }
 }
 </script>
@@ -40,5 +59,6 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
     height: 100%;
+    scroll-behavior: smooth;
   }
 </style>

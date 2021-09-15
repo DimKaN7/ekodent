@@ -1,5 +1,5 @@
 <template>
-  <div class="service-card">
+  <div class="service-card" >
     <div class="service-card__image" :style="{'background-image': `url(${image})`}"></div>
     <div class="service-card__title">{{title}}</div>
   </div>
@@ -37,8 +37,8 @@ export default {
   }
 
   &:hover {
-    background-color: $bggreen;
-    color: $bgwhite;
+    background-color: #4D8E4D;
+    color: white;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   }
 

@@ -6,7 +6,7 @@
         <span v-for="(t, index) in aboutStrings.titles" :key="index">{{t}}</span>
       </div>
       <div class="about__cards">
-        <AboutCard v-for="(c, index) in aboutStrings.cards" :key="index" :number="index + 1" 
+        <AboutCard v-for="(c, index) in aboutStrings.cards" :key="index" :number="index + 1"
           :content="c" />
       </div>
     </div>
@@ -71,7 +71,7 @@ export default {
       margin-bottom: 98.33px;
 
       >span:first-child {
-        color: $bgred;
+        color: #E64243;
       }
     }
 

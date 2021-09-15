@@ -57,7 +57,7 @@ export default {
     &__line {
       width: 638px;
       height: 5px;
-      background-color: $bggreen;
+      background-color: #4D8E4D;
       margin-bottom: 61px;
     }
 

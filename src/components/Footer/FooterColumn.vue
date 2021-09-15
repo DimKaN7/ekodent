@@ -31,13 +31,13 @@ export default {
     margin-bottom: 18px;
     text-decoration: none;
     outline: none;
-    color: $bgblack;
+    color: black;
     transition: color 0.3s ease-out;
     max-width: 201px;
     word-wrap: break-word;
 
     &:hover {
-      color: $bgred;
+      color: #E64243;
     }
   }
 }
