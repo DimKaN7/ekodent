@@ -12,10 +12,11 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ScrollUp from '../ScrollUp/ScrollUp';
 
+
 export default {
   name: 'App',
   components: {
-    Header, Footer
+    Header, Footer, ScrollUp
   },
   methods: {
     onScroll() {
