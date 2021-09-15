@@ -1,25 +1,26 @@
 <template>
-  <div 
-    data-aos="fade-down"
-    data-aos-duration="300"
-    :class="['header-container', scrolled && 'scrolled']" >
-    <div class="header">
-      <div class="info">
-        <a class="info__logo" href="#"></a>
-        <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="headerStrings[index].texts" 
-          :hrefs="headerStrings[index].hrefs" :styles="index === 3 ? 'font-weight: 500; font-size: 18px;' : ''"/>
-      </div>
+    <div
+        data-aos="fade-down"
+        data-aos-duration="300"
+        :class="['header-container', scrolled && 'scrolled']" >
+      <div class="header">
 
-      <div class="menu">
-        <div class="menu-items">
-          <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item">
-            {{item}}
+        <div class="info">
+          <a class="info__logo" href="#"></a>
+          <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="headerStrings[index].texts"
+            :hrefs="headerStrings[index].hrefs" :styles="index === 3 ? 'font-weight: 500; font-size: 18px;' : ''"/>
+        </div>
+
+        <div class="menu">
+          <div class="menu-items">
+            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item">
+              {{item}}
+            </div>
+            <div class="sign-up">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
           </div>
-          <div class="sign-up">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

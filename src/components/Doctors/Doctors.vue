@@ -1,12 +1,14 @@
 <template>
   <div class="doctors-container">
     <div class="doctors">
-      <div 
-        data-aos="fade-up" 
-        data-aos-duration="300"
-        data-aos-once="true"
-        class="doctors__title">
-        <span>{{doctorsStrings.title[0]}}</span> <span>{{doctorsStrings.title[1]}}</span>
+      <div class="doctors__title">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="300"
+          data-aos-once="true"
+          class="doctors__title">
+          <span>{{doctorsStrings.title[0]}}</span> <span>{{doctorsStrings.title[1]}}</span>
+        </div>
       </div>
       <div class="doctors__cards">
         <ArrowSlider arrowStyles="padding-top: 126.5px; padding-bottom: 17px;" :itemWidth="301" :itemsCount="doctorsStrings.doctors.length * 2">

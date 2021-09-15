@@ -1,6 +1,6 @@
 <template>
   <div class="doctor-card">
-    <div 
+    <div
       data-aos="zoom-in"
       data-aos-duration="300"
       data-aos-once="true"

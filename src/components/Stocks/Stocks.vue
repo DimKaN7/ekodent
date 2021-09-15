@@ -1,8 +1,8 @@
 <template>
   <div class="stocks-container">
     <div class="stocks">
-      <div 
-        data-aos="fade-up" 
+      <div
+        data-aos="fade-up"
         data-aos-duration="300"
         data-aos-once="true"
         class="stocks__title">
@@ -10,15 +10,15 @@
       </div>
       <div class="stocks__cards">
         <ArrowSlider :itemWidth="535" :itemsCount="stocksStrings.stocks.length + 2">
-          <StockCard 
-            data-aos="zoom-out" 
+          <StockCard
+            data-aos="zoom-out"
             data-aos-duration="300"
             data-aos-delay="300"
             data-aos-once="true"
             data-aos-anchor=".stocks__title"
             v-for="(stock, index) in stocksStrings.stocks" :key="index" :stock="stock"/>
-          <StockCard 
-            data-aos="zoom-out" 
+          <StockCard
+            data-aos="zoom-out"
             data-aos-duration="300"
             data-aos-delay="300"
             data-aos-once="true"

@@ -1,6 +1,6 @@
 <template>
   <div data-aos="fade"
-       data-aos-duration="1000" 
+       data-aos-duration="1000"
        class="services-container">
     <div class="services">
       <div class="title">
