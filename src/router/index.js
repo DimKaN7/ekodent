@@ -4,6 +4,7 @@ import AboutTab from '../components/Tabs/About/About'
 import MainTab from '../components/Tabs/Main/Main'
 
 export default new VueRouter({
+    mode: 'history',
     routes:[
         {
             path: '/',
