@@ -1,13 +1,13 @@
 <template>
   <div class="app">
     <Header :scrolled='scrollIndex >= 227'/>
-    <Preview />
+    <Preview></Preview>
     <Services />
     <About />
     <Stocks />
-    <Recommend />
+    <Recommend></Recommend>
     <Doctors />
-    <Director />
+    <Director></Director>
     <Reviews />
     <Footer />
     <ScrollUp v-if="scrollIndex >= 227" />
@@ -21,15 +21,18 @@ import Services from '../Services/Services';
 import About from '../About/About';
 import Stocks from '../Stocks/Stocks';
 import Doctors from '../Doctors/Doctors';
-import Recommend from '../Recommend/Recommend.vue';
 import Director from '../Director/Director';
 import Reviews from '../Reviews/Reviews';
 import Footer from '../Footer/Footer';
 import ScrollUp from '../ScrollUp/ScrollUp';
+import Recommend from "../Recommend/Recommend";
 
 export default {
   name: 'App',
   components: {
+    Director,
+    Recommend,
+    Preview,
     Header, Services, About, Stocks, Doctors, Reviews, Footer, ScrollUp
   },
   methods: {

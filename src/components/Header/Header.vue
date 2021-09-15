@@ -1,5 +1,4 @@
 <template>
-  <div class="header-container">
     <div
         data-aos="fade-down"
         data-aos-duration="300"
@@ -22,7 +21,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

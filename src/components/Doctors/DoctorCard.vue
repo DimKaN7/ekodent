@@ -1,7 +1,5 @@
 <template>
   <div class="doctor-card">
-    <div class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}"></div>
-    <div class="doctor-card__info">
     <div
       data-aos="zoom-in"
       data-aos-duration="300"
