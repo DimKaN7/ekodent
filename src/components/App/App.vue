@@ -1,14 +1,7 @@
 <template>
   <div class="app">
     <Header :scrolled='scrollIndex >= 227'/>
-    <Preview></Preview>
-    <Services />
-    <About />
-    <Stocks />
-    <Recommend></Recommend>
-    <Doctors />
-    <Director></Director>
-    <Reviews />
+    <router-view></router-view>
     <Footer />
     <ScrollUp v-if="scrollIndex >= 227" />
   </div>
@@ -16,24 +9,13 @@
 
 <script>
 import Header from '../Header/Header';
-import Preview from '../Preview/Preview';
-import Services from '../Services/Services';
-import About from '../About/About';
-import Stocks from '../Stocks/Stocks';
-import Doctors from '../Doctors/Doctors';
-import Director from '../Director/Director';
-import Reviews from '../Reviews/Reviews';
 import Footer from '../Footer/Footer';
 import ScrollUp from '../ScrollUp/ScrollUp';
-import Recommend from "../Recommend/Recommend";
 
 export default {
   name: 'App',
   components: {
-    Director,
-    Recommend,
-    Preview,
-    Header, Services, About, Stocks, Doctors, Reviews, Footer, ScrollUp
+    Header, Footer
   },
   methods: {
     onScroll() {

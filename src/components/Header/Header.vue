@@ -13,7 +13,7 @@
 
         <div class="menu">
           <div class="menu-items">
-            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item">
+            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="$router.push(menuUrl[index])">
               {{item}}
             </div>
             <div class="sign-up">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
@@ -49,6 +49,9 @@ export default {
       headerStrings,
       menuItems: [
         'Главная', 'О клинике', 'Цены', 'Услуги', 'Врачи', 'Отзывы', 'Вопросы'
+      ],
+      menuUrl: [
+        '/', 'about', 'Цены', 'Услуги', 'Врачи', 'Отзывы', 'Вопросы'
       ],
       selectedItem: 0,
     }
