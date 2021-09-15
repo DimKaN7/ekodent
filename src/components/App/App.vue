@@ -1,34 +1,19 @@
 <template>
   <div class="app">
     <Header />
-    <Preview />
-    <Services />
-    <About />
-    <Stocks />
-    <Recommend />
-    <Doctors />
-    <Director />
-    <Reviews />
+    <router-view></router-view>
     <Footer />
   </div>
 </template>
 
 <script>
 import Header from '../Header/Header';
-import Preview from '../Preview/Preview';
-import Services from '../Services/Services';
-import About from '../About/About';
-import Stocks from '../Stocks/Stocks';
-import Doctors from '../Doctors/Doctors';
-import Recommend from '../Recommend/Recommend.vue';
-import Director from '../Director/Director';
-import Reviews from '../Reviews/Reviews';
 import Footer from '../Footer/Footer';
 
 export default {
   name: 'App',
   components: {
-    Header, Preview, Services, About, Stocks, Doctors, Recommend, Director, Reviews, Footer
+    Header, Footer
   }
 }
 </script>
