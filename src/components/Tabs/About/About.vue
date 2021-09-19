@@ -10,10 +10,17 @@
         </div>
       </div>
       <div class="about-tab-text" v-for="(t,index) in aboutTabStrings.text" :key="index">
-
-        {{t}}
+        {{ t }}
       </div>
-
+    </div>
+    <div class="card-container" :style="{'background-image': `url(${Background})`}">
+      <div class="about-tab__gradient"></div>
+      <div class="about-tab">
+        <div class="about-tab__cards">
+          <AboutCard v-for="(c, index) in aboutTabStrings.cards" :key="index" :number="index + 1"
+                     :content="c"/>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -21,14 +28,19 @@
 
 
 <script>
-// import Background from '../../../assets/Director/Background.png';
 import {aboutTabStrings} from '../../../tools/strings';
+import AboutCard from "../../About/AboutCard";
+import Background from '../../../assets/Tabs/About/Background.png';
 
 export default {
   name: 'About',
-  data () {
+  components: {
+    AboutCard,
+  },
+  data() {
     return {
-      aboutTabStrings
+      aboutTabStrings,
+      Background
     }
   }
 }
@@ -39,16 +51,16 @@ export default {
 <style lang="scss">
 .about-tab-container {
   width: 100%;
-
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
-  padding: 0 10% 0 10%;
+  padding: 140px 10% 0 10%;
 
 }
-.about-tab-title{
+
+.about-tab-title {
   position: relative;
   justify-content: left;
   width: 132px;
@@ -64,6 +76,7 @@ export default {
   color: #000000;
 
 }
+
 .about-tab-line {
 
   background-color: #E64243;
@@ -71,13 +84,13 @@ export default {
   height: 2px;
 
 }
-.about-tab-text{
+
+.about-tab-text {
 
   width: 100%;
-  margin-bottom: 30px;
 }
 
-.about-tab-columns{
+.about-tab-columns {
 }
 
 .about__cards {
@@ -91,5 +104,63 @@ export default {
   row-gap: 40px;
 }
 
+// TODO Перенезвать стили
+
+.card-container .card__content {
+  background: rgba(0, 0, 0, 0);
+}
+
+.card-container {
+  padding: 0 5% 0 5%;
+  widows: 100%;
+  display: flex;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  .about-tab__gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #FFFFFF 46.93%, rgba(255, 255, 255, 0) 118.65%);
+  }
+
+  .about-tab {
+    height: 100%;
+    padding: 80px 0px 145px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+
+    &__title {
+      height: fit-content;
+      font-size: 36px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 98.33px;
+
+      > span:first-child {
+        color: #E64243;
+      }
+    }
+
+    &__cards {
+      height: fit-content;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      row-gap: 40px;
+    }
+  }
+}
+.card-container .card{
+  height: 100%;
+}
 
 </style>
