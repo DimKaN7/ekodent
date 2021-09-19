@@ -106,7 +106,7 @@ export default {
 
 // TODO Перенезвать стили
 
-.card-container .card__content {
+.card-container .card-block__content {
   background: rgba(0, 0, 0, 0);
 }
 
@@ -159,7 +159,7 @@ export default {
     }
   }
 }
-.card-container .card{
+.card-container .card-block{
   height: 100%;
 }
 
