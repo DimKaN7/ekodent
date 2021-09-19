@@ -9,7 +9,7 @@
       <div class="questions-tab-block__question" v-b-toggle="'accordion-' + index">{{t.question}}</div>
         <b-collapse class="questions-tab-block__answer" :id="'accordion-' + index" visible accordion="my-accordion" role="tabpanel">
           <div class="questions-tab-block__answer-text"></div>
-            {{t.answer}}
+            <span v-html="t.answer"></span>
         </b-collapse>
     </div>
   </div>

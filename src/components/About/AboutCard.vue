@@ -1,7 +1,9 @@
 <template>
   <div class="card-block">
     <div class="card-block__number">{{number}}</div>
-    <div class="card-block__content">{{content}}</div>
+    <div class="card-block__content">
+      <span v-html="content"></span>
+    </div>
   </div>
 </template>
 
