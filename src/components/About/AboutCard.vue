@@ -1,7 +1,7 @@
 <template>
-  <div class="card">
-    <div class="card__number">{{number}}</div>
-    <div class="card__content">{{content}}</div>
+  <div class="card-block">
+    <div class="card-block__number">{{number}}</div>
+    <div class="card-block__content">{{content}}</div>
   </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-.card {
+.card-block {
   width: 544px;
   height: 230px;
   display: flex;
