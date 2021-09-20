@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-3">
         <b-nav vertical class="services-tab-navbar">
-          <b-nav-item to="/Services/Therapy" active href="#my-nav-dropdown">Терапия (Лечение зубов)</b-nav-item>
+          <b-nav-item to="/Services/Therapy" :active='$route.name =="Therapy"' href="#my-nav-dropdown">Терапия (Лечение зубов)</b-nav-item>
           <b-nav-item class="sub-nav" to="/Services/Restoration" :active='$route.name =="Restoration"'>Реставрация</b-nav-item>
           <b-nav-item class="sub-nav" to="/Services/PersonalCleaning" :active='$route.name =="PersonalCleaning"'>Профессиональная чистка</b-nav-item>
           <b-nav-item to="/Services/DentalImplantation" :active='$route.name =="DentalImplantation"'>ДЕНТАЛЬНАЯ ИМПЛАНТАЦИЯ</b-nav-item>
