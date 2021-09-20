@@ -13,7 +13,9 @@
 
         <div class="menu">
           <div class="menu-items">
-            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="$router.push(menuUrl[index])">
+
+<!--            <div class="menu-details" :style="{'background-image': `url(${Details})`} ">Раскрыть</div>-->
+            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="$router.push(menuUrl[index], selectedItem = index)">
               {{item}}
             </div>
             <div class="sign-up">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
@@ -28,6 +30,7 @@ import Mail from '../../assets/Header/Mail.png';
 import Time from '../../assets/Header/Time.png';
 import Location from '../../assets/Header/Location.png';
 import Phone from '../../assets/Header/Phone.png';
+import Details from '../../assets/Header/Details.png';
 
 import InfoContent from './InfoContent';
 import {headerStrings} from '../../tools/strings';
@@ -46,12 +49,13 @@ export default {
   data() {
     return {
       icons: [Mail, Time, Location, Phone],
+      Details,
       headerStrings,
       menuItems: [
         'Главная', 'О клинике', 'Цены', 'Услуги', 'Врачи', 'Отзывы', 'Вопросы'
       ],
       menuUrl: [
-        '/', 'About', 'Price', 'Services', 'Врачи', 'Отзывы', 'Questions'
+        '/', '/About', '/Price', '/Services/Therapy', 'Врачи', 'Отзывы', '/Questions'
       ],
       selectedItem: 0,
     }
