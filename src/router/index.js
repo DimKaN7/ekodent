@@ -5,6 +5,7 @@ import QuestionsTab from '../components/Tabs/Questions/Questions'
 import VacanciesTab from '../components/Tabs/Vacancies/Vacancies'
 import MainTab from '../components/Tabs/Main/Main'
 import ServicesTab from '../components/Tabs/Services/Services'
+import PriceTab from '../components/Tabs/Price/Price'
 import TherapyChildTab from '../components/Tabs/Services/Therapy/Therapy'
 import RestorationChildTab from '../components/Tabs/Services/Restoration/Restoration'
 import PersonalCleaningChildTab from '../components/Tabs/Services/PersonalCleaning/PersonalCleaning'
@@ -40,6 +41,10 @@ export default new VueRouter({
         {
             path: '/Vacancies',
             component: VacanciesTab
+        },
+        {
+            path: '/Price',
+            component: PriceTab
         },
         {
             path: '/Services',

@@ -51,7 +51,7 @@ export default {
         'Главная', 'О клинике', 'Цены', 'Услуги', 'Врачи', 'Отзывы', 'Вопросы'
       ],
       menuUrl: [
-        '/', 'About', 'Цены', 'Services', 'Врачи', 'Отзывы', 'Questions'
+        '/', 'About', 'Price', 'Services', 'Врачи', 'Отзывы', 'Questions'
       ],
       selectedItem: 0,
     }
