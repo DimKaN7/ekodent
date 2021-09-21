@@ -1457,3 +1457,41 @@ export const VacanciesTabStrings = {
 export const FeedbackTabStrings = {
     title: 'Отзывы',
 }
+
+
+export const NewsStrings = {
+  title: ['Наши', 'Новости'],
+  stocks: [
+    {
+      image: require('../assets/Stocks/Stocks/0.png'),
+      title: 'AIR PROPHY UNIT + KAVA = ВКУСНО!',
+      buttonText: 'Узнать подробнее',
+    },
+    {
+      image: require('../assets/Stocks/Stocks/1.png'),
+      title: 'Подарок ко Дню рождения!',
+      buttonText: 'Узнать подробнее',
+    },
+  ],
+}
+
+
+export const CertificatessStrings = {
+  title: ['Наши', 'Сертефикаты'],
+  stocks: [
+    {
+      image: require('../assets/Stocks/Stocks/0.png'),
+      title: 'AIR PROPHY UNIT + KAVA = ВКУСНО!',
+      buttonText: 'Узнать подробнее',
+    },
+    {
+      image: require('../assets/Stocks/Stocks/1.png'),
+      title: 'Подарок ко Дню рождения!',
+      buttonText: 'Узнать подробнее',
+    },
+  ],
+}
+
+export const DoctorsTabStrings = {
+  title: 'Врачи',
+}
