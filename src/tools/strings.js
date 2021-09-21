@@ -53,34 +53,42 @@ export const servicesStrings = {
     {
       image: require(`../assets/Services/0.png`),
       title: 'ТЕРАПИЯ',
+      url: '/Services/Therapy'
     },
     {
       image: require(`../assets/Services/1.png`),
       title: 'ДЕНТАЛЬНАЯ ИМПЛАНТАЦИЯ',
+      url: '/Services/DentalImplantation'
     },
     {
       image: require(`../assets/Services/2.png`),
       title: 'ПАРОДОНТОЛОГИЯ',
+      url: '/Services/Periodontics'
     },
     {
       image: require(`../assets/Services/3.png`),
       title: 'ДЕТСКАЯ СТОМАТОЛОГИЯ',
+      url: '/Services/DentalImplantation'
     },
     {
       image: require(`../assets/Services/4.png`),
       title: 'ДЕТСКАЯ СТОМАТОЛОГИЯ',
+      url: '/Services/ChildrenDentistry'
     },
     {
       image: require(`../assets/Services/5.png`),
       title: 'ПРОТЕЗИРОВАНИЕ',
+      url: '/Services/Prosthetics'
     },
     {
       image: require(`../assets/Services/6.png`),
       title: 'ФИЗИОЛЕЧЕНИЕ',
+      url: '/Services/DentalImplantation'
     },
     {
       image: require(`../assets/Services/7.png`),
       title: 'ОРТОДОНТИЯ',
+      url: '/Services/Orthodontics'
     }
   ],
 };
@@ -1417,4 +1425,24 @@ export const PriceTabStrings = {
             },
         ],
     TextDownload: 'Полный прайс на стоматологические услуги: терапевтические, хирургические, ортопедические (протезирование), ортодонтические, имплантологические '
+}
+
+export const StocksTabStrings = {
+    title: 'Акции',
+}
+
+export const CertificatesTabStrings = {
+    title: 'Лицензии и сертефикаты',
+}
+
+export const NewsTabStrings = {
+    title: 'Новости',
+}
+
+export const VacanciesTabStrings = {
+    title: 'Вакансии',
+}
+
+export const FeedbackTabStrings = {
+    title: 'Отзывы',
 }

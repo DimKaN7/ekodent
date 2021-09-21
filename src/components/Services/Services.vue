@@ -10,7 +10,8 @@
       <div class="services__cards">
         <ServiceCard v-for="(card, index) in servicesStrings.cards" :key="index" 
           :image="card.image" 
-          :title="card.title"/>
+          :title="card.title"
+          :url="card.url"/>
       </div>
     </div>
   </div>

@@ -1,29 +1,29 @@
 <template>
-  <div class="Vacancies-tab-block">
-    <div class="Vacancies-tab-title">
-      {{ VacanciesTabStrings.title }}
+  <div class="Feedback-tab-block">
+    <div class="Feedback-tab-title">
+      {{ FeedbackTabStrings.title }}
     </div>
-    <div class="Vacancies-tab-line">
+    <div class="Feedback-tab-line">
     </div>
     aaa
   </div>
 </template>
 
 <script>
-import {VacanciesTabStrings} from "../../../tools/strings";
+import {FeedbackTabStrings} from "../../../tools/strings";
 
 export default {
-  name: "Vacancies",
+  name: "Feedback",
   data() {
     return {
-      VacanciesTabStrings,
+      FeedbackTabStrings,
     }
   }
 }
 </script>
 
 <style scoped>
-.Vacancies-tab-block {
+.Feedback-tab-block {
   width: 100%;
   font-family: Roboto;
   font-style: normal;
@@ -39,7 +39,7 @@ export default {
 }
 
 
-.Vacancies-tab-title {
+.Feedback-tab-title {
   margin-top: 30px;
   font-family: Roboto;
   font-style: normal;
@@ -51,7 +51,7 @@ export default {
   z-index: 2;
 }
 
-.Vacancies-tab-line {
+.Feedback-tab-line {
   background-color: #E64243;
   width: 73px;
   height: 2px;
