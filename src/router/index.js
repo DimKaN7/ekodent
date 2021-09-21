@@ -6,6 +6,11 @@ import VacanciesTab from '../components/Tabs/Vacancies/Vacancies'
 import MainTab from '../components/Tabs/Main/Main'
 import ServicesTab from '../components/Tabs/Services/Services'
 import PriceTab from '../components/Tabs/Price/Price'
+import CertificatesTab from '../components/Tabs/Certificates/Certificates'
+import NewsTab from '../components/Tabs/News/News'
+import StocksTab from '../components/Tabs/Stocks/Stocks'
+import FeedbackTab from '../components/Tabs/Feedback/Feedback'
+
 import TherapyChildTab from '../components/Tabs/Services/Therapy/Therapy'
 import RestorationChildTab from '../components/Tabs/Services/Restoration/Restoration'
 import PersonalCleaningChildTab from '../components/Tabs/Services/PersonalCleaning/PersonalCleaning'
@@ -45,6 +50,22 @@ export default new VueRouter({
         {
             path: '/Price',
             component: PriceTab
+        },
+        {
+            path: '/Certificates',
+            component: CertificatesTab
+        },
+        {
+            path: '/News',
+            component: NewsTab
+        },
+        {
+            path: '/Stocks',
+            component: StocksTab
+        },
+        {
+            path: '/Feedback',
+            component: FeedbackTab
         },
         {
             path: '/Services',

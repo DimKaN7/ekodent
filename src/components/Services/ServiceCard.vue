@@ -1,5 +1,5 @@
 <template>
-  <div class="service-card" >
+  <div class="service-card" @click="$router.push(url)">
     <div class="service-card__image" :style="{'background-image': `url(${image})`}"></div>
     <div class="service-card__title">{{title}}</div>
   </div>
@@ -14,6 +14,10 @@ export default {
       required: true,
     },
     title: {
+      type: String,
+      required: true,
+    },
+    url: {
       type: String,
       required: true,
     }

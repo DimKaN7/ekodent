@@ -12,9 +12,22 @@
         </div>
 
         <div class="menu">
+          <div class="">
+            <div class="menu-details dropdown dropbtn">
+              <div class="menu-details-item">
+                <div class="menu-details-block">
+                  <a href="/Certificates">Лицензии и сертефикаты</a>
+                  <a href="/Vacancies">Вакансии</a>
+                  <a href="/News">Новости</a>
+                  <a href="/Stocks">Акции</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
           <div class="menu-items">
 
-<!--            <div class="menu-details" :style="{'background-image': `url(${Details})`} ">Раскрыть</div>-->
             <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="$router.push(menuUrl[index], selectedItem = index)">
               {{item}}
             </div>
@@ -49,21 +62,77 @@ export default {
   data() {
     return {
       icons: [Mail, Time, Location, Phone],
-      Details,
       headerStrings,
       menuItems: [
         'Главная', 'О клинике', 'Цены', 'Услуги', 'Врачи', 'Отзывы', 'Вопросы'
       ],
       menuUrl: [
-        '/', '/About', '/Price', '/Services/Therapy', 'Врачи', 'Отзывы', '/Questions'
+        '/', '/About', '/Price', '/Services/Therapy', '/Doctors', '/Feedback', '/Questions'
       ],
       selectedItem: 0,
+      Details,
     }
   }
 }
 </script>
 
 <style lang="scss">
+
+.menu-details{
+  margin-top: 25px;
+  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  background: url('../../assets/Header/Details.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.menu-details-item{
+  display: none;
+  //position: absolute;
+  min-width: 160px;
+  z-index: 9;
+  margin-top: 44px;
+  position: absolute;
+  width: 250px;
+  height: 120px;
+}
+
+.menu-details-item a {
+  color: black;
+  text-decoration: none;
+  flex-flow: column;
+  justify-content: space-evenly;
+  flex-grow: 2;
+  text-align: left;
+  z-index: 3;
+  display: block;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.menu-details-item a:hover {
+  text-decoration-line: underline;
+  color: #E64243;
+}
+.dropdown:hover .menu-details-item {
+  display: block;
+}
+
+.menu-details-block{
+  padding: 10px;
+  background: #F0F0F0;
+  border-right:  2px solid #4D8E4D;
+  border-bottom: 2px solid #4D8E4D;
+  border-left:   2px solid  #4D8E4D;
+  box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .header-container {
   width: 100%;
   height: 140px;
@@ -76,7 +145,6 @@ export default {
   position: fixed;
   z-index: 10;
   transition: transform 0.3s ease-in-out;
-  overflow: hidden;
 
   &.scrolled {
     transform: translateY(-84px) !important;
