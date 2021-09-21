@@ -10,6 +10,7 @@ import CertificatesTab from '../components/Tabs/Certificates/Certificates'
 import NewsTab from '../components/Tabs/News/News'
 import StocksTab from '../components/Tabs/Stocks/Stocks'
 import FeedbackTab from '../components/Tabs/Feedback/Feedback'
+import DoctorsTab from  '../components/Tabs/Doctors/Doctors'
 
 import TherapyChildTab from '../components/Tabs/Services/Therapy/Therapy'
 import RestorationChildTab from '../components/Tabs/Services/Restoration/Restoration'
@@ -66,6 +67,10 @@ export default new VueRouter({
         {
             path: '/Feedback',
             component: FeedbackTab
+        },
+        {
+            path: '/Doctors',
+            component: DoctorsTab
         },
         {
             path: '/Services',
