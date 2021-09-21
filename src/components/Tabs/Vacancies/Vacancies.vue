@@ -5,7 +5,15 @@
     </div>
     <div class="Vacancies-tab-line">
     </div>
-    aaa
+    <div class="Vacancies-tab-block-text">
+      <div class="Vacancies-tab-sub-title">
+        {{VacanciesTabStrings.subTitle}}
+      </div>
+      <div class="Vacancies-tab-text" v-html="VacanciesTabStrings.text[0]">
+      </div>
+      <div class="Vacancies-tab-text" v-html="VacanciesTabStrings.text[1]">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -56,6 +64,22 @@ export default {
   width: 73px;
   height: 2px;
   margin-bottom: 42px;
+}
+
+.Vacancies-tab-block-text{
+  margin-top: 50px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.Vacancies-tab-text{
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 </style>
