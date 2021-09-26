@@ -9,7 +9,7 @@
         <span>{{stocksStrings.title[0]}}</span> <span>{{stocksStrings.title[1]}}</span>
       </div>
       <div class="stocks__cards">
-        <ArrowSlider :itemWidth="535" :itemsCount="stocksStrings.stocks.length + 2">
+        <ArrowSlider :itemWidth="535" :itemsCount="stocksStrings.stocks.length + 3">
           <StockCard
             data-aos="zoom-out"
             data-aos-duration="300"
@@ -23,7 +23,7 @@
             data-aos-delay="300"
             data-aos-once="true"
             data-aos-anchor=".stocks__title"
-            v-for="(stock, index) in stocksStrings.stocks" :key="index + 2" :stock="stock"/>
+            v-for="(stock, index) in stocksStrings.stocks" :key="index + 3" :stock="stock"/>
         </ArrowSlider>
       </div>
     </div>
@@ -80,6 +80,7 @@ export default {
       height: 100%;
       display: flex;
       flex-direction: row;
+      font-size: 36px;
 
       .cards {
         flex: 1 0 auto;

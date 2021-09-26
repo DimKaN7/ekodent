@@ -17,10 +17,6 @@
               <div class="menu-details-item">
                 <div class="menu-details-block">
                   <div v-for="(item, index) in additionalMenuItems" :key="item" @click="$router.push(additionalMenuUrl[index])">
-<!--                  <a href="/Certificates"  @click="$router.push(menuUrl[index]) ">Лицензии и сертефикаты</a>-->
-<!--                  <a href="/Vacancies">Вакансии</a>-->
-<!--                  <a href="/News">Новости</a>-->
-<!--                  <a href="/Stocks">Акции</a>-->
                     {{item}}
                   </div>
                 </div>
@@ -67,11 +63,6 @@
             +7 (3952) 252-712; +7 (3952) 251-651
           </div>
         </div>
-<!--        <div class="d-block text-center">-->
-<!--          <h3>Hello From My Modal!</h3>-->
-<!--        </div>-->
-<!--        <b-button class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-button>-->
-<!--        <b-button class="mt-2" variant="outline-warning" block @click="toggleModal">Toggle Me</b-button>-->
       </b-modal>
     </div>
 </template>

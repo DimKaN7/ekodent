@@ -3,8 +3,7 @@
     <div class="director-main">
       <div class="director">
         <div class="director__icon" :style="{backgroundImage: `url(${directorStrings.image})`}"></div>
-        <div class="director__quote" v-for="(t,index) in directorStrings.text" :key="index">
-          {{t}}
+        <div class="director__quote" v-for="(t,index) in directorStrings.text" :key="index" v-html="t">
         </div>
       </div>
       <div class="director-photo" :style="{backgroundImage: `url(${Background})`}"></div>
@@ -62,7 +61,7 @@ export default {
             width: 100%;
             align-items: center;
             font-size: 24px;
-            text-align: center;
+            text-align: justify;
 
              &:last-child {
                text-align: right;
