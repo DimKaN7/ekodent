@@ -184,17 +184,17 @@ export const footerStrings = {
         {
           type: 'link',
           title: 'О клинике',
-          href: '#',
+          href: '/About',
         },
         {
           type: 'link',
           title: 'Вакансии',
-          href: '#',
+          href: '/Vacancies',
         },
         {
           type: 'link',
           title: 'Сертификаты и лицензии',
-          href: '#',
+          href: '/Certificates',
         }
       ]
     },
@@ -205,38 +205,38 @@ export const footerStrings = {
         {
           type: 'link',
           title: 'Врачи',
-          href: '#',
+          href: '/Doctors',
         },
         {
           type: 'link',
           title: 'Услуги',
-          href: '#',
+          href: '/Services/Therapy',
         },
         {
           type: 'link',
           title: 'Акции',
-          href: '#',
+          href: '/Stocks',
         },
         {
           type: 'link',
           title: 'Новости',
-          href: '#',
+          href: '/News',
         },
         {
           type: 'link',
           title: 'Вопросы',
-          href: '#',
+          href: '/Questions',
         },
         {
           type: 'link',
           title: 'Отзывы',
-          href: '#',
+          href: '/Feedback',
         },
-        {
-          type: 'link',
-          title: 'Справочник',
-          href: '#',
-        }
+        // {
+        //   type: 'link',
+        //   title: 'Справочник',
+        //   href: '#',
+        // }
       ]
     },
 

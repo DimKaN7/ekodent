@@ -28,7 +28,7 @@
 
           <div class="menu-items">
 
-            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="$router.push(menuUrl[index], selectedItem = index)">
+            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="$router.push(menuUrl[index]) ">
               {{item}}
             </div>
             <div class="sign-up" @click="showModal">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
@@ -104,7 +104,7 @@ export default {
       menuUrl: [
         '/', '/About', '/Price', '/Services/Therapy', '/Doctors', '/Feedback', '/Questions'
       ],
-      selectedItem: 0,
+      selectedItem: null,
       Details,
     }
   },
@@ -118,6 +118,27 @@ export default {
     sendForm(){
       alert(123);
     }
+  },
+  // TODO Сделал инвалидно, нужно исправить и делать это дело одним методом (Или же вообще без их использования)
+  watch:{
+    $route: function(to) {
+      this.menuUrl.forEach((el, index) => {
+        if (el === to['fullPath']){
+          this.selectedItem =  index;
+        }
+      });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+  },
+  mounted(){
+    this.menuUrl.forEach((el, index) => {
+      if (el === this.$route.fullPath){
+        this.selectedItem =  index;
+      }
+    });
   }
 }
 </script>

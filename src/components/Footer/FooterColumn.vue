@@ -1,7 +1,7 @@
 <template>
   <div class="footer-column">
     <div class="title">{{column.title}}</div>
-    <a v-for="(c, index) in column.content" :key="index" :href="c.href" :type="c.type">{{c.title}}</a>
+    <div v-for="(c, index) in column.content" :key="index" :type="c.type" @click="$router.push(c.href)">{{c.title}}</div>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
     margin-bottom: 23px;
   }
 
-  >a {
+  >div {
     margin-bottom: 18px;
     text-decoration: none;
     outline: none;
@@ -37,6 +37,7 @@ export default {
     word-wrap: break-word;
 
     &:hover {
+      cursor: pointer;
       color: #E64243;
     }
   }
