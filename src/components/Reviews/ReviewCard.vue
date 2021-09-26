@@ -6,10 +6,10 @@
         <div class="card-info__title">
           <span>{{review.title}}</span>
         </div>
-        <div class="card-info__message">{{review.message}}</div>
+        <div class="card-info__message" v-html="review.message"></div>
         <!-- <div class="card-info__experience" v-if="review.experience">{{review.experience}}</div> -->
       </div>
-      <div class="card-info__button">{{review.buttonText}}</div>
+<!--      <div class="card-info__button">{{review.buttonText}}</div>-->
     </div>
   </div>
 </template>

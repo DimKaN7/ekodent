@@ -4,7 +4,7 @@
       <div class="image" :style="{'background-image': `url(${stock.image})`}"></div>
     </div>
     <div class="stock-card__title">{{stock.title}}</div>
-    <div class="stock-card__button">{{stock.buttonText}}</div>
+<!--    <div class="stock-card__button">{{stock.buttonText}}</div>-->
   </div>
 </template>
 
@@ -58,7 +58,7 @@ export default {
     text-align: center;
     margin-top: 20px;
     text-transform: uppercase;
-    font-size: 36px;
+    font-size: 28px;
   }
 
   &__button {

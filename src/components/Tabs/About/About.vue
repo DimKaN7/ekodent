@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="about-tab-container">
-
       <div class="about-tab-title">
         {{ aboutTabStrings.title }}
 
@@ -9,19 +8,20 @@
 
         </div>
       </div>
-      <div class="about-tab-text" v-for="(t,index) in aboutTabStrings.text" :key="index">
-        {{ t }}
+      <div class="about-tab-logo" :style="{'background-image': `url(${Logo})`}">
+      </div>
+      <div class="about-tab-text" v-for="(t,index) in aboutTabStrings.text" :key="index" v-html="t">
       </div>
     </div>
-    <div class="card-container" :style="{'background-image': `url(${Background})`}">
-      <div class="about-tab__gradient"></div>
-      <div class="about-tab">
-        <div class="about-tab__cards">
-          <AboutCard v-for="(c, index) in aboutTabStrings.cards" :key="index" :number="index + 1"
-                     :content="c"/>
-        </div>
-      </div>
-    </div>
+<!--    <div class="card-container" :style="{'background-image': `url(${Background})`}">-->
+<!--      <div class="about-tab__gradient"></div>-->
+<!--      <div class="about-tab">-->
+<!--        <div class="about-tab__cards">-->
+<!--          <AboutCard v-for="(c, index) in aboutTabStrings.cards" :key="index" :number="index + 1"-->
+<!--                     :content="c"/>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 
 </template>
@@ -29,18 +29,20 @@
 
 <script>
 import {aboutTabStrings} from '../../../tools/strings';
-import AboutCard from "../../About/AboutCard";
+// import AboutCard from "../../About/AboutCard";
+import Logo from '../../../assets/Tabs/About/Logo.png'
 import Background from '../../../assets/Tabs/About/Background.png';
 
 export default {
   name: 'About',
   components: {
-    AboutCard,
+    // AboutCard,
   },
   data() {
     return {
       aboutTabStrings,
-      Background
+      Background,
+      Logo
     }
   }
 }
@@ -49,6 +51,15 @@ export default {
 
 
 <style lang="scss">
+
+.about-tab-logo{
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 .about-tab-container {
   width: 100%;
   font-family: Roboto;
@@ -56,7 +67,7 @@ export default {
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
-  padding: 140px 10% 0 10%;
+  padding: 140px 10% 30px 10%;
 
 }
 
@@ -88,6 +99,7 @@ export default {
 .about-tab-text {
 
   width: 100%;
+  text-align: justify;
 }
 
 .about-tab-columns {

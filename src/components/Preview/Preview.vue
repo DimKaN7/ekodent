@@ -6,8 +6,9 @@
                 <div class="preview-text" v-for="(d,index) in previewStrings.descriptions" :key="index">
                     {{d}}
                 </div>
-        </div>
+              <SignUp class="preview__sign_up"></SignUp>
 
+            </div>
         </div>
         <div class="advantages-container">
             <div class="advantages">
@@ -23,8 +24,14 @@
 <script>
 import Background from '../../assets/Preview/Background.png';
 import {previewStrings} from '../../tools/strings';
+import SignUp from '../SignUp/SignUp';
+
+
 export default {
     name: 'Preview',
+    components: {
+      SignUp,
+    },
     data () {
         return {
             Background, previewStrings
@@ -36,6 +43,8 @@ export default {
 
 <style lang="scss">
 .preview-container {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    text-align: justify;
     width: 100%;
     height: 840px;
     background-color: $bgwhite;
@@ -83,6 +92,10 @@ export default {
 
 
         }
+        &__sign_up{
+          margin-top: 50px;
+          font-family: 'Roboto', sans-serif;
+        }
     }
     .advantages-container {
         width: 100%;
@@ -120,7 +133,7 @@ export default {
                 }
 
                 &__text {
-                    font-size: 18px;
+                    font-size: 16px;
                     text-align: center;
                     color: white;
 

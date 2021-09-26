@@ -2,7 +2,7 @@
  <div>
    <Preview></Preview>
    <Services></Services>
-   <About></About>
+<!--   <About></About>-->
    <Stocks></Stocks>
    <Recommend></Recommend>
    <Doctors></Doctors>
@@ -14,7 +14,7 @@
 <script>
 import Preview from '../../Preview/Preview';
 import Services from '../../Services/Services';
-import About from '../../About/About';
+// import About from '../../About/About';
 import Stocks from '../../Stocks/Stocks';
 import Recommend from "../../Recommend/Recommend";
 import Doctors from '../../Doctors/Doctors';
@@ -23,9 +23,11 @@ import Reviews from '../../Reviews/Reviews';
 
 export default {
   name: "Main",
-  components: {Reviews, Director, Doctors, Recommend, Stocks, About, Services, Preview},
+  // components: {Reviews, Director, Doctors, Recommend, Stocks, About, Services, Preview},
+  components: {Reviews, Director, Doctors, Recommend, Stocks, Services, Preview},
   comments:{
-    Preview, Services, About, Stocks, Doctors, Recommend, Director, Reviews
+    // Preview, Services, About, Stocks, Doctors, Recommend, Director, Reviews
+    Preview, Services, Stocks, Doctors, Recommend, Director, Reviews
   }
 }
 </script>

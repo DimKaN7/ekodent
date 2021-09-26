@@ -7,7 +7,7 @@
                 {{t}}
         </div>
 
-      <div class="consultation">Записаться на бесплатную консультацию</div>
+      <div class="consultation">ЗАПИСАТЬСЯ НА ПРИЁМ</div>
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
 .recommend {
   position: relative;
   width: 100%;
-  height: 660px;
+  height: 730px;
   display: flex;
   background-position: center;
   background: no-repeat;
