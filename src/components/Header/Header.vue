@@ -16,10 +16,13 @@
             <div class="menu-details dropdown dropbtn">
               <div class="menu-details-item">
                 <div class="menu-details-block">
-                  <a href="/Certificates">Лицензии и сертефикаты</a>
-                  <a href="/Vacancies">Вакансии</a>
-                  <a href="/News">Новости</a>
-                  <a href="/Stocks">Акции</a>
+                  <div v-for="(item, index) in additionalMenuItems" :key="item" @click="$router.push(additionalMenuUrl[index])">
+<!--                  <a href="/Certificates"  @click="$router.push(menuUrl[index]) ">Лицензии и сертефикаты</a>-->
+<!--                  <a href="/Vacancies">Вакансии</a>-->
+<!--                  <a href="/News">Новости</a>-->
+<!--                  <a href="/Stocks">Акции</a>-->
+                    {{item}}
+                  </div>
                 </div>
               </div>
 
@@ -28,7 +31,7 @@
 
           <div class="menu-items">
 
-            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="$router.push(menuUrl[index]) ">
+            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="$router.push(menuUrl[index])">
               {{item}}
             </div>
             <div class="sign-up" @click="showModal">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
@@ -104,6 +107,12 @@ export default {
       menuUrl: [
         '/', '/About', '/Price', '/Services/Therapy', '/Doctors', '/Feedback', '/Questions'
       ],
+      additionalMenuItems: [
+        'Лицензии', 'Вакансии', 'Новости', 'Акции'
+      ],
+      additionalMenuUrl: [
+        '/Certificates', '/Vacancies', '/News', '/Stocks'
+      ],
       selectedItem: null,
       Details,
     }
@@ -129,7 +138,6 @@ export default {
       });
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
       })
     }
   },
@@ -252,6 +260,12 @@ export default {
   box-sizing: border-box;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  >div {
+    &:hover {
+      cursor: pointer;
+      color: #E64243;
+    }
+  }
 }
 
 .header-container {
