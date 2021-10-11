@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="Prosthetics-tab-block__subtitle">
-      {{ProstheticsTabStrings.subTitle[0]}}
+      <h5>{{ProstheticsTabStrings.subTitle[0]}}</h5>
     </div>
     <div class="row therapy-text">
       <span v-html="ProstheticsTabStrings.text[1]"></span>
@@ -56,7 +56,6 @@ export default {
 
 .Prosthetics-tab-block__subtitle{
   font-family: Roboto;
-  font-style: italic;
   font-size: 16px;
   line-height: 18px;
   margin-bottom: 29px;

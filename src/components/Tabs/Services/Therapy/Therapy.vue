@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="therapy-tab-block__subtitle">
-      {{therapyTabStrings.subTitle[0]}}
+      <h5>{{therapyTabStrings.subTitle[0]}}</h5>
     </div>
     <div class="therapy-text">
       <span  v-html="therapyTabStrings.text[1]"></span>
@@ -136,14 +136,6 @@ export default {
   margin-bottom: 42px;
 }
 
-.therapy-tab-block__subtitle{
-  font-family: Roboto;
-  font-style: italic;
-  font-size: 16px;
-  line-height: 18px;
-  margin-bottom: 29px;
-}
-
 .background_image{
   width: 100%;
   height: 100%;
@@ -172,7 +164,7 @@ export default {
 
 .therapy-info-banner-text{
   font-family: Roboto;
-  font-style: italic;
+  /*font-style: italic;*/
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;
@@ -190,7 +182,6 @@ export default {
 
 .therapy-tab-block__subtitle{
   font-family: Roboto;
-  font-style: italic;
   font-size: 16px;
   line-height: 18px;
   margin-bottom: 29px;

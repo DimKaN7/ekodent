@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="Orthodontics-tab-block__subtitle">
-      {{OrthodonticsTabStrings.subTitle[0]}}
+      <h5>{{OrthodonticsTabStrings.subTitle[0]}}</h5>
     </div>
     <div class="row therapy-text">
       <span v-html="OrthodonticsTabStrings.text[1]"></span>
@@ -57,7 +57,6 @@ export default {
 
 .Orthodontics-tab-block__subtitle{
   font-family: Roboto;
-  font-style: italic;
   font-size: 16px;
   line-height: 18px;
   margin-bottom: 29px;

@@ -14,8 +14,10 @@
         </div>
       </div>
     </div>
-    <div class="row therapy-text">
-      <span v-html="ChildrenDentistryTabStrings.text[1]"></span>
+    <div class="ChildrenDentistry-tab-block__infoBanner">
+      <div class="row therapy-text">
+        <span v-html="ChildrenDentistryTabStrings.text[1]"></span>
+      </div>
     </div>
   </div>
 </template>
@@ -62,6 +64,15 @@ export default {
 }
 
 .therapy-text{
-  margin-bottom: 50px;
+}
+
+.ChildrenDentistry-tab-block__infoBanner{
+  background: rgba(77, 142, 77, 0.2);
+  border-radius: 10px;
+  padding: 15px 15px 15px 15px;
+  height: 100%;
+  margin-bottom: 20px;
+  margin-top: 50px;
+
 }
 </style>

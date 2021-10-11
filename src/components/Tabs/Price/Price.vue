@@ -11,7 +11,7 @@
           <h4>{{collum.subTitle}}</h4>
           <div v-for="(collumBlock, indexBlock) in collum.collum" :key="indexBlock">
             <div class="pl-2">
-              {{collumBlock.collumTitle}}
+              <div class="Price-tab-line__subtitle__collum"><b>{{collumBlock.collumTitle}}</b></div>
             </div>
               <b-table striped hover :items="collumBlock.textCollum" :fields="columnsName"></b-table>
           </div>
@@ -92,6 +92,14 @@ export default {
   width: 73px;
   height: 2px;
   margin-bottom: 42px;
+}
+
+.Price-tab-line__subtitle__collum{
+  font-family: Roboto;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 19px;
 }
 
 ::v-deep .sr-only{display:none !important}

@@ -12,7 +12,7 @@
       <div class="row Periodontics-text">
         <div class="col-6">
           <div class="Periodontics-tab-block__subtitle">
-            {{PeriodonticsTabStrings.subTitle[0]}}
+            <h5>{{PeriodonticsTabStrings.subTitle[0]}}</h5>
           </div>
           <span v-html="PeriodonticsTabStrings.text[1]"></span>
         </div>
@@ -79,7 +79,7 @@ export default {
 
 .Periodontics-tab-block__subtitle{
   font-family: Roboto;
-  font-style: italic;
+  /*font-style: italic;*/
   font-size: 16px;
   line-height: 18px;
   margin-bottom: 29px;
