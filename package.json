@@ -16,7 +16,8 @@
     "sass-loader": "^10.1.0",
     "vue": "^2.6.11",
     "vue-router": "^3.5.2",
-    "vue-yandex-maps": "^0.10.9"
+    "vue-yandex-maps": "^0.10.9",
+    "vue-yandex-metrika": "^1.8.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

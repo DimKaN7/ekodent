@@ -27,8 +27,8 @@ export default {
 
 <style lang="scss">
 .service-card {
-  width: 281.65px;
-  height: 257.45px;
+  width: 331.65px;
+  height: 307.45px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.1);
   position: relative;
@@ -47,8 +47,8 @@ export default {
   }
 
   &__image {
-    width: 245px;
-    height: 220px;
+    width: 295px;
+    height: 270px;
     position: absolute;
     left: -1px;
     top: -19.39px;
@@ -64,7 +64,7 @@ export default {
     text-transform: uppercase;
     font-size: 18px;
     position: absolute;
-    top: 218.58px;
+    top: 268.58px;
     left: 10.69px;
   }
 }

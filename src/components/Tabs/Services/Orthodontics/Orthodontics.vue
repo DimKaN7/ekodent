@@ -6,27 +6,21 @@
     <div class="Orthodontics-tab-line">
     </div>
     <div class="row therapy-text">
-      <div class="col-6">
-        <div class="Orthodontics-tab-block__subtitle">
-          {{OrthodonticsTabStrings.subTitle[0]}}
-        </div>
+      <div class="col-4">
         <span v-html="OrthodonticsTabStrings.text[0]"></span>
       </div>
-      <div class="col-6">
+      <div class="col-8">
         <div class="background_image" :style="{'background-image': `url(${Orthodontics})`}">
         </div>
       </div>
     </div>
     <div class="Orthodontics-tab-block__subtitle">
-      {{OrthodonticsTabStrings.subTitle[1]}}
+      {{OrthodonticsTabStrings.subTitle[0]}}
     </div>
     <div class="row therapy-text">
       <span v-html="OrthodonticsTabStrings.text[1]"></span>
     </div>
     <div class="Orthodontics-tab-block__infoBanner">
-      <div class="Orthodontics-tab-block__subtitle">
-        {{OrthodonticsTabStrings.subTitle[2]}}
-      </div>
       <div class="row Orthodontics-text">
         <span v-html="OrthodonticsTabStrings.text[2]"></span>
       </div>

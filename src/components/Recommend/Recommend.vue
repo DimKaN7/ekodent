@@ -4,10 +4,13 @@
     <div class="recommend__content">
 
       <div class="text" v-for="(t,index) in recommendStrings.text" :key="index">
-                {{t}}
-        </div>
+        {{t}}
+      </div>
 
-      <div class="consultation">ЗАПИСАТЬСЯ НА ПРИЁМ</div>
+<!--      <div class="consultation">ЗАПИСАТЬСЯ НА ПРИЁМ</div>-->
+      <div class="d-flex justify-content-center">
+        <sign-up class="recommend__sign_up"></sign-up>
+      </div>
     </div>
   </div>
 </template>
@@ -15,8 +18,13 @@
 <script>
 import Background from '../../assets/Recommend/Background.png';
 import {recommendStrings} from '../../tools/strings';
+import SignUp from '../SignUp/SignUp';
+
 export default {
     name: 'Recommend',
+    components: {
+      SignUp,
+    },
     data () {
       return {
         Background, recommendStrings
@@ -91,5 +99,6 @@ export default {
   }
 
 }
+
 
 </style>

@@ -7,6 +7,7 @@ import router from './router/index'
 import { BootstrapVue} from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import VueYandexMetrika from 'vue-yandex-metrika'
 
 
 Vue.config.productionTip = false
@@ -22,3 +23,10 @@ new Vue({
   render: h => h(App),
   router
 }).$mount('#app')
+
+Vue.use(VueYandexMetrika, {
+  id: 77650765,
+  router: router,
+  env: process.env.NODE_ENV
+  // other options
+})

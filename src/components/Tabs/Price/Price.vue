@@ -8,8 +8,13 @@
       </div>
       <div v-for="(collum, index) in PriceTabStrings.collums" :key="index">
         <div class="Price-tab-block__subtitle">
-          {{collum.subTitle}}
-          <b-table striped hover :items="collum.textCollum" :fields="columnsName"></b-table>
+          <h4>{{collum.subTitle}}</h4>
+          <div v-for="(collumBlock, indexBlock) in collum.collum" :key="indexBlock">
+            <div class="pl-2">
+              {{collumBlock.collumTitle}}
+            </div>
+              <b-table striped hover :items="collumBlock.textCollum" :fields="columnsName"></b-table>
+          </div>
         </div>
       </div>
       <b-button class="mb-4" pill variant="outline-secondary" href="../../../assets/Tabs/Price/Prices.pdf">{{PriceTabStrings.TextDownload}}</b-button>

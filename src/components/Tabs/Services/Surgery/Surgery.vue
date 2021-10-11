@@ -5,8 +5,8 @@
     </div>
     <div class="Surgery-tab-line">
     </div>
-    <div class="row therapy-text">
-      <div class="col-6">
+    <div class="row therapy-text therapy-text-block">
+      <div class="col-6  d-flex align-items-center">
         <span v-html="SurgeryTabStrings.text[0]"></span>
       </div>
       <div class="col-6">
@@ -21,9 +21,6 @@
       <span v-html="SurgeryTabStrings.text[1]"></span>
     </div>
     <div class="Surgery-tab-block__infoBanner">
-      <div class="Surgery-tab-block__subtitle">
-        {{SurgeryTabStrings.subTitle[1]}}
-      </div>
       <div class="row Surgery-text">
         <span v-html="SurgeryTabStrings.text[2]"></span>
       </div>
@@ -82,6 +79,10 @@ export default {
 
 .therapy-text{
   margin-bottom: 50px;
+}
+
+.therapy-text-block{
+  height: 300px;
 }
 
 .Surgery-tab-block__infoBanner{

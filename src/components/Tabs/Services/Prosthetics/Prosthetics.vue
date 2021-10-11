@@ -6,10 +6,10 @@
     <div class="Prosthetics-tab-line">
     </div>
     <div class="row therapy-text">
-      <div class="col-6">
+      <div class="col-4">
         <span v-html="ProstheticsTabStrings.text[0]"></span>
       </div>
-      <div class="col-6">
+      <div class="col-8">
         <div class="background_image" :style="{'background-image': `url(${Prosthetics})`}">
         </div>
       </div>
@@ -21,9 +21,6 @@
       <span v-html="ProstheticsTabStrings.text[1]"></span>
     </div>
     <div class="Prosthetics-tab-block__infoBanner">
-      <div class="Prosthetics-tab-block__subtitle">
-        {{ProstheticsTabStrings.subTitle[1]}}
-      </div>
       <div class="row Prosthetics-text">
         <span v-html="ProstheticsTabStrings.text[2]"></span>
       </div>

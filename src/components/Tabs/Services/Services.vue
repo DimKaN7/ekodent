@@ -4,21 +4,21 @@
       <div class="col-3">
         <b-nav vertical class="services-tab-navbar">
           <b-nav-item to="/Services/Therapy" :active='$route.name =="Therapy"' href="#my-nav-dropdown">Терапия (Лечение зубов)</b-nav-item>
-          <b-nav-item class="sub-nav" to="/Services/Restoration" :active='$route.name =="Restoration"'>Реставрация</b-nav-item>
-          <b-nav-item class="sub-nav" to="/Services/PersonalCleaning" :active='$route.name =="PersonalCleaning"'>Профессиональная чистка</b-nav-item>
-          <b-nav-item to="/Services/DentalImplantation" :active='$route.name =="DentalImplantation"'>ДЕНТАЛЬНАЯ ИМПЛАНТАЦИЯ</b-nav-item>
-          <b-nav-item to="/Services/Periodontics" :active='$route.name =="Periodontics"'>ПАРАДОНТОЛОГИЯ(Лечение десен)</b-nav-item>
-          <b-nav-item to="/Services/Gingivitis" :active='$route.name =="Gingivitis"' class="sub-nav">Лечение и профилактика гингвинита</b-nav-item>
-          <b-nav-item to="/Services/Periodontitis" :active='$route.name =="Periodontitis"' class="sub-nav">Лечение и профилактика пародонтита</b-nav-item>
-          <b-nav-item to="/Services/ChildrenDentistry" :active='$route.name =="ChildrenDentistry"' >ДЕТСКАЯ СТОМАТОЛОГИЯ</b-nav-item>
-          <b-nav-item to="/Services/Surgery" :active='$route.name =="Surgery"'>ХИРУРГИЯ</b-nav-item>
-          <b-nav-item to="/Services/ToothRemoval" :active='$route.name =="ToothRemoval"' class="sub-nav">Удаление зубов</b-nav-item>
-          <b-nav-item to="/Services/Prosthetics" :active='$route.name =="Prosthetics"'>ПРОТЕЗИРОВАНИЕ</b-nav-item>
+<!--          <b-nav-item class="sub-nav" to="/Services/Restoration" :active='$route.name =="Restoration"'>Реставрация</b-nav-item>-->
+<!--          <b-nav-item class="sub-nav" to="/Services/PersonalCleaning" :active='$route.name =="PersonalCleaning"'>Профессиональная чистка</b-nav-item>-->
+<!--          <b-nav-item to="/Services/DentalImplantation" :active='$route.name =="DentalImplantation"'>ДЕНТАЛЬНАЯ ИМПЛАНТАЦИЯ</b-nav-item>-->
+          <b-nav-item to="/Services/Periodontics" :active='$route.name =="Periodontics"'>Пародонтология(Лечение десен)</b-nav-item>
+<!--          <b-nav-item to="/Services/Gingivitis" :active='$route.name =="Gingivitis"' class="sub-nav">Лечение и профилактика гингвинита</b-nav-item>-->
+<!--          <b-nav-item to="/Services/Periodontitis" :active='$route.name =="Periodontitis"' class="sub-nav">Лечение и профилактика пародонтита</b-nav-item>-->
+          <b-nav-item to="/Services/ChildrenDentistry" :active='$route.name =="ChildrenDentistry"' >Детская стоматология</b-nav-item>
+          <b-nav-item to="/Services/Surgery" :active='$route.name =="Surgery"'>Хирургия</b-nav-item>
+<!--          <b-nav-item to="/Services/ToothRemoval" :active='$route.name =="ToothRemoval"' class="sub-nav">Удаление зубов</b-nav-item>-->
+          <b-nav-item to="/Services/Prosthetics" :active='$route.name =="Prosthetics"'>Ортопедия</b-nav-item>
 <!--          <b-nav-item to="/Services/Physiotherapy" :active='$route.name =="Physiotherapy"'>ФИЗИОЛЕЧЕНИЕ</b-nav-item>-->
-          <b-nav-item to="/Services/Orthodontics" :active='$route.name =="Orthodontics"'>ОРТОДОНТИЯ (Исправление прикуса)</b-nav-item>
-          <b-nav-item to="/Services/Braces" :active='$route.name =="Braces"' class="sub-nav">Брекеты</b-nav-item>
-          <b-nav-item to="/Services/RemovableStructures" :active='$route.name =="RemovableStructures"' class="sub-nav">Съемные конструкции</b-nav-item>
-          <b-nav-item to="/Services/SurgicalMethods" :active='$route.name =="SurgicalMethods"'>Хирургические методы</b-nav-item>
+          <b-nav-item to="/Services/Orthodontics" :active='$route.name =="Orthodontics"'>Ортодонтия (Исправление прикуса)</b-nav-item>
+<!--          <b-nav-item to="/Services/Braces" :active='$route.name =="Braces"' class="sub-nav">Брекеты</b-nav-item>-->
+<!--          <b-nav-item to="/Services/RemovableStructures" :active='$route.name =="RemovableStructures"' class="sub-nav">Съемные конструкции</b-nav-item>-->
+<!--          <b-nav-item to="/Services/SurgicalMethods" :active='$route.name =="SurgicalMethods"'>Хирургические методы</b-nav-item>-->
         </b-nav>
       </div>
       <div class="col-9">

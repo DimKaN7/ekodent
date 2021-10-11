@@ -3,32 +3,35 @@
     <div class="sign-up" @click="showModal">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
     <b-modal ref="my-modal" hide-footer hide-header title="Using Component Methods">
       <div class="make-appointment">
-        <div class="text-center">
-          <div class="make-appointment__title">
-            ЗАПИСАТЬСЯ НА ПРИЕМ
+        <form action="../../feedback.php" method="POST">
+          <div class="text-center">
+            <div class="make-appointment__title">
+              ЗАПИСАТЬСЯ НА ПРИЕМ
+            </div>
+            <div class="make-appointment__line">
+            </div>
           </div>
-          <div class="make-appointment__line">
+          <div class="make-appointment__text">
+            Администратор ответит на все Ваши вопросы и запишет на прием к специалисту.
           </div>
-        </div>
-        <div class="make-appointment__text">
-          Администратор клиники с радостью ответит на ваши вопросы и запишет к нужному специалисту.
-        </div>
-        <div class="make-appointment__form">
-          <input type="hidden" name="formData" value="Обратная связь сайта Ekodent">
-          <input class="make-appointment__input w-100 mt-3" name="name" placeholder="Имя" type="text">
-          <input class="make-appointment__input w-100 mt-3" name="phone" placeholder="Телефон" type="tel">
-          <input class="make-appointment__input w-100 mt-3" name="email" placeholder="E-mail" type="email">
-        </div>
-        <div class="make-appointment__info">
-          Отправляя данную форму, я подтверждаю свое согласие с политикой обработки персональных данных.
-        </div>
-        <div class="make-appointment__button justify-content-center  align-items-center d-flex" @click="sendForm">
-          Отправить
-        </div>
-        <div class="make-appointment__info text-center">
-          Мы постараемся ответить Вам в течение 1 рабочего дня. Для получения экстренной помощи звоните по телефонам:
-          +7 (3952) 252-712; +7 (3952) 251-651
-        </div>
+          <div class="make-appointment__form">
+            <input type="hidden" name="formData" value="Обратная связь сайта Ekodent">
+            <input class="make-appointment__input w-100 mt-3" name="name" placeholder="Имя" type="text">
+            <input class="make-appointment__input w-100 mt-3" name="phone" placeholder="Телефон" type="tel">
+            <input class="make-appointment__input w-100 mt-3" name="email" placeholder="E-mail" type="email">
+            <input type="hidden" name="formData" value="Заявка с сайта">
+          </div>
+          <div class="make-appointment__info">
+            Отправляя данную форму, я подтверждаю свое согласие с политикой обработки персональных данных.
+          </div>
+          <button class="make-appointment__button justify-content-center  align-items-center d-flex" type="submit" name="sendMail">
+            Отправить
+          </button>
+          <div class="make-appointment__info text-center">
+            Для получения экстренной помощи звоните по телефонам:
+            +7 (3952) 252-712; +7 (3952) 251-651
+          </div>
+        </form>
       </div>
     </b-modal>
   </div>
@@ -44,9 +47,6 @@ export default {
     hideModal() {
       this.$refs['my-modal'].hide()
     },
-    sendForm(){
-      alert(123);
-    }
   },
 }
 

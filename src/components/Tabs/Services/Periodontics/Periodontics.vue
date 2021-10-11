@@ -21,6 +21,11 @@
           </div>
         </div>
       </div>
+      <div class="Periodontics-tab-block__infoBanner">
+        <div class="row">
+          <span v-html="PeriodonticsTabStrings.text[2]"></span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -78,5 +83,14 @@ export default {
   font-size: 16px;
   line-height: 18px;
   margin-bottom: 29px;
+}
+
+
+.Periodontics-tab-block__infoBanner{
+  background: rgba(77, 142, 77, 0.2);
+  border-radius: 10px;
+  padding: 15px 15px 15px 15px;
+  height: 100%;
+  margin-bottom: 20px;
 }
 </style>
