@@ -4,14 +4,6 @@
         data-aos-duration="300"
         :class="['header-container', scrolled && 'scrolled']" >
       <div class="header">
-        <b-alert
-            :show="dismissCountDown"
-            fade
-            variant="danger"
-            @dismiss-count-down="countDownChanged" class="position-absolute  top-50 start-50 translate-middle alert-custom"
-        >
-          По техническим причинам 21 декабря мы не работаем! Просим прощение за неудобство!
-        </b-alert>
         <div class="info">
           <a class="info__logo" href="#"></a>
           <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="headerStrings[index].texts"
@@ -116,9 +108,6 @@ export default {
       ],
       selectedItem: null,
       Details,
-      dismissSecs: 8,
-      dismissCountDown: 0,
-      showDismissibleAlert: false
     }
   },
   methods: {
@@ -127,12 +116,6 @@ export default {
     },
     hideModal() {
       this.$refs['my-modal'].hide()
-    },
-    countDownChanged(dismissCountDown) {
-      this.dismissCountDown = dismissCountDown
-    },
-    showAlert() {
-      this.dismissCountDown = this.dismissSecs
     },
     sendForm(){
 
@@ -157,16 +140,11 @@ export default {
         this.selectedItem =  index;
       }
     });
-    this.showAlert();
   }
 }
 </script>
 
 <style lang="scss">
-
-.alert-custom{
-  z-index: 100;
-}
 
 .make-appointment{
   padding: 35px;
