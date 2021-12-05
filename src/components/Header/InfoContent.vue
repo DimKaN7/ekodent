@@ -1,6 +1,6 @@
 <template>
   <div class="info-content">
-    <div class="icon" :style="{backgroundImage: `url(${icon})`}"></div>
+    <div v-if="icon" class="icon" :style="{backgroundImage: `url(${icon})`}"></div>
     <div v-if="hrefs.length > 0" class="text" :style="{justifyContent: texts.length > 1 ? 'space-between' : 'center'}">
         <a v-for="(h, index) in hrefs" :key="index" :href="h" :style="styles">{{texts[index]}}</a>
     </div>
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'InfoContent', 
   props: {
@@ -28,6 +29,11 @@ export default {
     styles: {
       type: String,
     },
+  },
+  computed: {
+    ...mapGetters([
+      'isMobile'
+    ])
   }
 }
 </script>

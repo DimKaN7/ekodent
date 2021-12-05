@@ -6,11 +6,28 @@
       <div class="header">
         <div class="info">
           <a class="info__logo" href="#"></a>
-          <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="headerStrings[index].texts"
-            :hrefs="headerStrings[index].hrefs" :styles="index === 3 ? 'font-weight: 500; font-size: 18px;' : ''"/>
+          <!-- <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="windowWidth < 1287 ? headerStrings.mobile[index].texts : headerStrings.desktop[index].texts"
+            :hrefs="windowWidth < 1287 ? headerStrings.mobile[index].hrefs : headerStrings.desktop[index].hrefs" :styles="index === 3 ? 'font-weight: 500; font-size: 18px;' : ''"/> -->
+            <InfoContent v-for="(s, index) in (isMobile ? headerStrings.mobile : headerStrings.desktop)" 
+            :key="index" :icon="isMobile ? '' : icons[index]" :texts="s.texts"
+            :hrefs="s.hrefs" :styles="isMobile
+                                      ? 'font-weight: 500; font-size: 14px;' 
+                                      : 
+                                        index == 3 
+                                        ? 'font-weight: 500; font-size: 18px;'
+                                        : ''"/>
+                                        <div v-if="isMobile" class="menu-details dropdown dropbtn">
+            <div v-if="isMobile" class="menu-details-item">
+              <div class="menu-details-block">
+                <!-- <div v-for="(item, index) in additionalMenuItems" :key="item" @click="$router.push(additionalMenuUrl[index])">
+                  {{item}}
+                </div> -->
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="menu">
+        <div class="menu" v-if="!isMobile">
           <div class="">
             <div class="menu-details dropdown dropbtn">
               <div class="menu-details-item">
@@ -25,7 +42,6 @@
           </div>
 
           <div class="menu-items">
-
             <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="$router.push(menuUrl[index])">
               {{item}}
             </div>
@@ -70,6 +86,7 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex'
 import Mail from '../../assets/Header/Mail.png';
 import Time from '../../assets/Header/Time.png';
 import Location from '../../assets/Header/Location.png';
@@ -134,6 +151,14 @@ export default {
       })
     }
   },
+  computed: {
+    ...mapState([
+      'windowWidth'
+    ]),
+    ...mapGetters([
+      'isMobile'
+    ]),
+  },
   mounted(){
     this.menuUrl.forEach((el, index) => {
       if (el === this.$route.fullPath){
@@ -148,7 +173,6 @@ export default {
 
 .make-appointment{
   padding: 35px;
-
 
   &__title{
     font-style: normal;
@@ -279,11 +303,12 @@ export default {
   }
 
   .header {
-    width: 1267px;
+    width: 1287px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 10px;
 
     .info {
       width: 100%;
@@ -367,6 +392,28 @@ export default {
         }
       }
     }
+  }
+}
+
+@media (max-width: 1286px) {
+  .header-container {
+    width: 100%;
+    padding-top: 15px;
+    height: 99px;
+  }
+
+  .info {
+    font-size: 14px;
+    &__logo {
+      width: 180px !important;
+      height: 43px !important;
+    }
+  }
+
+  .menu-details {
+    width: 32px !important;
+    height: 32px !important;
+    margin: 0 !important;
   }
 }
 </style>
