@@ -2,11 +2,22 @@
   <div class="about-container" :style="{'background-image': `url(${Background})`}">
     <div class="gradient"></div>
     <div class="about">
-      <div class="about__title">
+      <div 
+        data-aos="fade-up" 
+        data-aos-once="true" 
+        data-aos-duration="300"
+        data-aos-offset="600"
+        class="about__title">
         <span v-for="(t, index) in aboutStrings.titles" :key="index">{{t}}</span>
       </div>
       <div class="about__cards">
-        <AboutCard v-for="(c, index) in aboutStrings.cards" :key="index" :number="index + 1"
+        <AboutCard 
+          data-aos="zoom-in" 
+          :data-aos-delay="(index + 1) * 300"
+          data-aos-once="true" 
+          data-aos-anchor=".about__title"
+          data-aos-offset="600"
+          v-for="(c, index) in aboutStrings.cards" :key="index" :number="index + 1" 
           :content="c" />
       </div>
     </div>

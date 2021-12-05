@@ -1,30 +1,31 @@
 <template>
   <div class="reviews-container">
     <div class="reviews">
-      <div class="reviews__title">
-        <div
-          data-aos="fade-up"
-          data-aos-duration="300"
-          data-aos-once="true"
-          class="reviews__title">
-          <span>{{reviewsStrings.title[0]}}</span> <span>{{reviewsStrings.title[1]}}</span>
-        </div>
+      <div 
+        data-aos="fade-up" 
+        data-aos-duration="300"
+        data-aos-once="true"
+        data-aos-offset="650"
+        class="reviews__title">
+        <span>{{reviewsStrings.title[0]}}</span> <span>{{reviewsStrings.title[1]}}</span>
       </div>
       <div class="reviews__cards">
-        <ArrowSlider arrowStyles="padding-top: 35px;" :itemWidth="301" :itemsCount="reviewsStrings.reviews.length * 2">
+        <ArrowSlider animAnchor=".reviews__title" :animOffset="650" arrowStyles="padding-top: 35px;" :itemWidth="301" :itemsCount="reviewsStrings.reviews.length * 2">
           <ReviewCard
             data-aos="fade-up"
             data-aos-duration="300"
             data-aos-delay="300"
             data-aos-once="true"
-            data-aos-anchor=".reviews__title"
+            data-aos-anchor=".reviews__title" 
+            data-aos-offset="650"
             v-for="(review, index) in reviewsStrings.reviews" :key="index" :review="review"/>
           <ReviewCard
             data-aos="fade-up"
             data-aos-duration="300"
             data-aos-delay="300"
             data-aos-once="true"
-            data-aos-anchor=".reviews__title"
+            data-aos-anchor=".reviews__title" 
+            data-aos-offset="650"
             v-for="(review, index) in reviewsStrings.reviews" :key="index + 3" :review="review"/>
         </ArrowSlider>
       </div>
@@ -71,6 +72,7 @@ export default {
       text-transform: uppercase;
       font-size: 36px;
       user-select: none;
+      line-height: 1;
 
       >span:last-child {
         color:#E64243;

@@ -43,10 +43,10 @@ export default {
 
       .director {
         display: flex;
-       width: 698px;
+        width: 698px;
         height: 100%;
         flex-direction: column;
-       align-items: center;
+        align-items: center;
 
           .director__icon {
             position: relative;

@@ -1,29 +1,32 @@
 <template>
   <div class="stocks-container">
     <div class="stocks">
-      <div
-        data-aos="fade-up"
+      <div 
+        data-aos="fade-up" 
         data-aos-duration="300"
         data-aos-once="true"
+        data-aos-offset="600"
         class="stocks__title">
         <span>{{stocksStrings.title[0]}}</span> <span>{{stocksStrings.title[1]}}</span>
       </div>
       <div class="stocks__cards">
-        <ArrowSlider :itemWidth="535" :itemsCount="stocksStrings.stocks.length + 3">
-          <StockCard
-            data-aos="zoom-out"
+        <ArrowSlider animAnchor=".stocks__title" :animOffset="600" :itemWidth="535" :itemsCount="stocksStrings.stocks.length">
+          <StockCard 
+            data-aos="zoom-out" 
             data-aos-duration="300"
             data-aos-delay="300"
             data-aos-once="true"
             data-aos-anchor=".stocks__title"
+            data-aos-offset="600"
             v-for="(stock, index) in stocksStrings.stocks" :key="index" :stock="stock"/>
-          <StockCard
-            data-aos="zoom-out"
+          <!-- <StockCard 
+            data-aos="zoom-out" 
             data-aos-duration="300"
             data-aos-delay="300"
             data-aos-once="true"
             data-aos-anchor=".stocks__title"
-            v-for="(stock, index) in stocksStrings.stocks" :key="index + 3" :stock="stock"/>
+            data-aos-offset="600"
+            v-for="(stock, index) in stocksStrings.stocks" :key="index + 2" :stock="stock"/> -->
         </ArrowSlider>
       </div>
     </div>
@@ -65,6 +68,7 @@ export default {
     align-items: center;
 
     &__title {
+      line-height: 1;
       margin-bottom: 80px;
       text-transform: uppercase;
       font-size: 36px;
@@ -80,7 +84,6 @@ export default {
       height: 100%;
       display: flex;
       flex-direction: row;
-      font-size: 36px;
 
       .cards {
         flex: 1 0 auto;

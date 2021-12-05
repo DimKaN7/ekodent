@@ -1,17 +1,16 @@
 <template>
   <div class="doctors-container">
     <div class="doctors">
-      <div class="doctors__title">
-        <div
-          data-aos="fade-up"
-          data-aos-duration="300"
-          data-aos-once="true"
-          class="doctors__title">
-          <span>{{doctorsStrings.title[0]}}</span> <span>{{doctorsStrings.title[1]}}</span>
-        </div>
+      <div 
+        data-aos="fade-up" 
+        data-aos-duration="300"
+        data-aos-once="true"
+        data-aos-offset="650"
+        class="doctors__title">
+        <span>{{doctorsStrings.title[0]}}</span> <span>{{doctorsStrings.title[1]}}</span>
       </div>
       <div class="doctors__cards">
-        <ArrowSlider arrowStyles="padding-top: 126.5px; padding-bottom: 17px;" :itemWidth="301" :itemsCount="doctorsStrings.doctors.length * 2">
+        <ArrowSlider animAnchor=".doctors__title" :animOffset="650" arrowStyles="padding-top: 126.5px; padding-bottom: 17px;" :itemWidth="301" :itemsCount="doctorsStrings.doctors.length * 2">
           <DoctorCard v-for="(d, index) in doctorsStrings.doctors" :key="index" :doctor="d"/>
           <DoctorCard v-for="(d, index) in doctorsStrings.doctors" :key="index + 3" :doctor="d"/>
         </ArrowSlider>
@@ -60,6 +59,7 @@ export default {
       text-transform: uppercase;
       font-size: 36px;
       user-select: none;
+      line-height: 1;
 
       >span:last-child {
         color:#E64243;

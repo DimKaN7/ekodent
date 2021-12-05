@@ -1,12 +1,24 @@
 <template>
   <div class="arrow-slider-container">
-    <Arrow left :arrowStyles="arrowStyles" @arrowClick="onClick" :show="isShown(true)"/>
+    <Arrow 
+      data-aos="fade-up" 
+      data-aos-duration="300"
+      data-aos-once="true"
+      :data-aos-anchor="animAnchor"
+      :data-aos-offset="animOffset"
+      left :arrowStyles="arrowStyles" @arrowClick="onClick" :show="isShown(true)"/>
     <div class="arrow-slider">
       <div class="slider" :style="{'width': `${sliderWidth}px`, 'left': `-${scrollIndex * (itemWidth + spaceBetween)}px`}">
         <slot></slot>
       </div>
     </div>
-    <Arrow :arrowStyles="arrowStyles" @arrowClick="onClick" :show="isShown(false)"/>
+    <Arrow 
+      data-aos="fade-up" 
+      data-aos-duration="300"
+      data-aos-once="true"
+      :data-aos-anchor="animAnchor"
+      :data-aos-offset="animOffset"
+      :arrowStyles="arrowStyles" @arrowClick="onClick" :show="isShown(false)"/>
   </div>
 </template>
 <script>
@@ -29,6 +41,14 @@ export default {
     itemsCount: {
       type: Number,
       required: true,
+    },
+    animOffset: {
+      type: Number,
+      required: true,
+    },
+    animAnchor: {
+      type: String,
+      require: true,
     }
   },
   data() {
