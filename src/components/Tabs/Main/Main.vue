@@ -2,11 +2,11 @@
 <div>
   <Preview></Preview>
   <Services></Services>
-  <!-- <Stocks></Stocks>
+  <!-- <Stocks></Stocks> -->
   <Recommend></Recommend>
-  <Doctors></Doctors>
-  <Director></Director>
-  <Reviews></Reviews> -->
+  <!-- <Doctors></Doctors> -->
+  <!-- <Director></Director> -->
+  <!-- <Reviews></Reviews> -->
 </div>
 </template>
 
@@ -14,7 +14,7 @@
 import Preview from '../../Preview/Preview';
 import Services from '../../Services/Services';
 // import Stocks from '../../Stocks/Stocks';
-// import Recommend from "../../Recommend/Recommend";
+import Recommend from "../../Recommend/Recommend";
 // import Doctors from '../../Doctors/Doctors';
 // import Director from '../../Director/Director';
 // import Reviews from '../../Reviews/Reviews';
@@ -25,13 +25,15 @@ export default {
   components: {
     // Reviews, Director, Doctors, Recommend, Stocks, 
     Services, 
-    Preview
+    Preview,
+    Recommend
   },
   comments:{
     // Preview, Services, About, Stocks, Doctors, Recommend, Director, Reviews
     Preview, 
-    Services, 
-    // Stocks, Doctors, Recommend, Director, Reviews
+    Services,
+    Recommend
+    //Stocks,  Doctors, Recommend, Director, Reviews
   }
 }
 </script>

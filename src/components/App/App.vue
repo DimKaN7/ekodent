@@ -2,8 +2,9 @@
   <div class="app">
     <Header :scrolled='scrollIndex >= 227 && !isMobile'/>
     <router-view></router-view>
-    <!-- <Footer />
-    <ScrollUp v-if="scrollIndex >= 227" /> -->
+    <Footer v-if="!isMobile" />
+    <FooterMobile v-else />
+    <!-- <ScrollUp v-if="scrollIndex >= 227" /> -->
   </div>
 </template>
 
@@ -11,15 +12,18 @@
 import { mapActions, mapGetters, mapState } from 'vuex'
 
 import Header from '../Header/Header';
-// import Footer from '../Footer/Footer';
+import Footer from '../Footer/Footer';
+import FooterMobile from '../Footer/FooterMobile';
 // import ScrollUp from '../ScrollUp/ScrollUp';
 
 
 export default {
   name: 'App',
   components: {
-    Header, 
-    // Footer, ScrollUp
+    Header,  
+    Footer,
+    FooterMobile, 
+    // ScrollUp
   },
   computed: {
     ...mapState([

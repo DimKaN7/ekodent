@@ -6,7 +6,11 @@
       data-aos-once="true"
       :data-aos-anchor="animAnchor"
       :data-aos-offset="animOffset"
-      left :arrowStyles="arrowStyles" @arrowClick="onClick" :show="isShown(true)"/>
+      left :arrowStyles="arrowStyles" 
+      @arrowClick="onClick" 
+      :show="isShown(true)"
+      :width="34"
+      :height="65" />
     <div class="arrow-slider">
       <div class="slider" :style="{'width': `${sliderWidth}px`, 'left': `-${scrollIndex * (itemWidth + spaceBetween)}px`}">
         <slot></slot>
@@ -18,7 +22,11 @@
       data-aos-once="true"
       :data-aos-anchor="animAnchor"
       :data-aos-offset="animOffset"
-      :arrowStyles="arrowStyles" @arrowClick="onClick" :show="isShown(false)"/>
+      :arrowStyles="arrowStyles" 
+      @arrowClick="onClick" 
+      :show="isShown(false)"
+      :width="34"
+      :height="65" />
   </div>
 </template>
 <script>

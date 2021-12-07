@@ -94,4 +94,16 @@ export default {
     }
   }
 }
+
+@media (max-width: 1286px) {
+  .stocks-container {
+    .stocks {
+      padding-top: 0;
+
+      &__title {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
 </style>

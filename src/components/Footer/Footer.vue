@@ -18,9 +18,10 @@
 
 <script>
 import FooterColumn from './FooterColumn';
-import {footerStrings} from '../../tools/strings';
+import { footerStrings } from '../../tools/strings';
 
-import { yandexMap, ymapMarker} from 'vue-yandex-maps';
+import { yandexMap, ymapMarker } from 'vue-yandex-maps';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Footer',
@@ -35,6 +36,11 @@ export default {
       },
       coords: [52.280864154504464, 104.31581467800731]
     }
+  },
+  computed: {
+    ...mapGetters([
+      'isMobile'
+    ])
   }
 }
 </script>

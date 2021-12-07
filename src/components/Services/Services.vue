@@ -73,13 +73,19 @@ export default {
 }
 
 @media (max-width: 1286px) {
-  .services {
-    padding-top: 33px !important;
-
-    &__cards {
-      margin-top: 51px !important;
-      flex-direction: column !important;
-      align-items: center !important;
+  .services-container {
+    height: fit-content !important;
+    
+    .services {
+      padding-top: 33px !important;
+      padding-bottom: 94px !important;
+      height: fit-content !important;
+  
+      &__cards {
+        margin-top: 51px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
     }
   }
 }
