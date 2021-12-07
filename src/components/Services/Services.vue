@@ -1,7 +1,7 @@
 <template>
   <div data-aos="fade"
-       data-aos-duration="1000"
-       class="services-container">
+      data-aos-duration="1000"
+      class="services-container">
     <div class="services">
       <div class="title">
         <span>{{servicesStrings.title[0]}} </span>
@@ -20,7 +20,7 @@
 <script>
 import ServiceCard from './ServiceCard';
 
-import {servicesStrings} from '../../tools/strings';
+import { servicesStrings } from '../../tools/strings';
 
 export default {
   name: 'Services',
@@ -68,6 +68,18 @@ export default {
       flex-wrap: wrap;
       row-gap: 100px;
       margin-top: 108px;
+    }
+  }
+}
+
+@media (max-width: 1286px) {
+  .services {
+    padding-top: 33px !important;
+
+    &__cards {
+      margin-top: 51px !important;
+      flex-direction: column !important;
+      align-items: center !important;
     }
   }
 }

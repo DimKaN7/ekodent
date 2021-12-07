@@ -1,8 +1,8 @@
 <template>
 <div>
   <Preview></Preview>
-  <!-- <Services></Services>
-  <Stocks></Stocks>
+  <Services></Services>
+  <!-- <Stocks></Stocks>
   <Recommend></Recommend>
   <Doctors></Doctors>
   <Director></Director>
@@ -12,7 +12,7 @@
 
 <script>
 import Preview from '../../Preview/Preview';
-// import Services from '../../Services/Services';
+import Services from '../../Services/Services';
 // import Stocks from '../../Stocks/Stocks';
 // import Recommend from "../../Recommend/Recommend";
 // import Doctors from '../../Doctors/Doctors';
@@ -23,13 +23,15 @@ export default {
   name: "Main",
   // components: {Reviews, Director, Doctors, Recommend, Stocks, About, Services, Preview},
   components: {
-    // Reviews, Director, Doctors, Recommend, Stocks, Services, 
+    // Reviews, Director, Doctors, Recommend, Stocks, 
+    Services, 
     Preview
   },
   comments:{
     // Preview, Services, About, Stocks, Doctors, Recommend, Director, Reviews
     Preview, 
-    // Services, Stocks, Doctors, Recommend, Director, Reviews
+    Services, 
+    // Stocks, Doctors, Recommend, Director, Reviews
   }
 }
 </script>
