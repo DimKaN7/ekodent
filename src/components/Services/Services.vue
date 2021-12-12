@@ -78,13 +78,14 @@ export default {
     
     .services {
       padding-top: 33px !important;
-      padding-bottom: 94px !important;
+      padding-bottom: 0px !important;
       height: fit-content !important;
   
       &__cards {
         margin-top: 51px !important;
         flex-direction: column !important;
         align-items: center !important;
+        row-gap: 35px;
       }
     }
   }

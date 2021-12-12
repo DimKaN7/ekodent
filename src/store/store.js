@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export const store = new Vuex.Store(
   {
     state: {
-      windowWidth: 0
+      windowWidth: 0,
     },
     getters: {
       isMobile: ({windowWidth}) => {
@@ -16,12 +16,12 @@ export const store = new Vuex.Store(
     mutations: {
       setWindowWidth: (state, payload) => {
         state.windowWidth = payload
-      }
+      },
     },
     actions: {
       setWindowWidth: (context, payload) => {
         context.commit('setWindowWidth', payload)
-      }
+      },
     }
   }
 )

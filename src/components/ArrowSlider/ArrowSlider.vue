@@ -1,6 +1,7 @@
 <template>
   <div class="arrow-slider-container">
     <Arrow 
+      v-if="!isMobile"
       data-aos="fade-up" 
       data-aos-duration="300"
       data-aos-once="true"
@@ -11,12 +12,20 @@
       :show="isShown(true)"
       :width="34"
       :height="65" />
-    <div class="arrow-slider">
-      <div class="slider" :style="{'width': `${sliderWidth}px`, 'left': `-${scrollIndex * (itemWidth + spaceBetween)}px`}">
+    <div class="arrow-slider" ref="slider">
+      <div v-if="!isMobile" class="slider" :style="{'width': `${sliderWidth}px`, 'left': `-${scrollIndex * (itemWidth + spaceBetween)}px`}">
         <slot></slot>
+      </div>
+      <div class="fade-wrapper" v-else>
+        <transition-group class="transition" name="fade" tag="div">
+          <div class="fade-slider" v-for="i in [scrollIndex]" :key="i">
+            <slot></slot>
+          </div>
+        </transition-group>
       </div>
     </div>
     <Arrow 
+      v-if="!isMobile"
       data-aos="fade-up" 
       data-aos-duration="300"
       data-aos-once="true"
@@ -30,6 +39,7 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 import Arrow from '../Arrow/Arrow';
 
 export default {
@@ -52,12 +62,17 @@ export default {
     },
     animOffset: {
       type: Number,
-      required: true,
+      required: false,
     },
     animAnchor: {
       type: String,
-      require: true,
+      require: false,
     }
+  },
+  computed: {
+    ...mapGetters([
+      'isMobile',
+    ]),
   },
   data() {
     return {
@@ -67,12 +82,27 @@ export default {
       scrollPagesCount: 0,
     }
   },
-  beforeMount() {
-    const countInSlide = Math.floor(1113 / this.itemWidth);
+  // beforeMount() {
+  // },
+  mounted() {
+    const clientWidth = this.$refs.slider.clientWidth - 34
+    const countInSlide = Math.floor(clientWidth / this.itemWidth);
+    // const countInSlide = Math.floor(375 / this.itemWidth)
     this.scrollPagesCount = this.itemsCount - countInSlide;
-    this.spaceBetween = (1113 - (this.itemWidth * countInSlide)) / (countInSlide - 1);
+    this.spaceBetween = (clientWidth - (this.itemWidth * countInSlide)) / (countInSlide === 1 ? 1 : countInSlide - 1);
     const sliderWidth = this.itemWidth * this.itemsCount + this.spaceBetween * (this.itemsCount - 1) + 34;
     this.sliderWidth =  sliderWidth;
+
+    // const countInSlide = Math.floor(1113 / this.itemWidth);
+    // this.scrollPagesCount = this.itemsCount - countInSlide;
+    // this.spaceBetween = (1113 - (this.itemWidth * countInSlide)) / (countInSlide - 1);
+    // const sliderWidth = this.itemWidth * this.itemsCount + this.spaceBetween * (this.itemsCount - 1) + 34;
+    // this.sliderWidth =  sliderWidth;
+
+    console.log(countInSlide, this.scrollPagesCount, this.spaceBetween, this.sliderWidth)
+  },
+  beforeDestroy() {
+
   },
   methods: {
     onClick(isLeft) {
@@ -95,7 +125,7 @@ export default {
               : this.scrollIndex == this.scrollPagesCount
                   ? false
                   : true;
-    }
+    },
   }
 }
 </script>
@@ -106,14 +136,25 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: row;
+  position: relative;
 
   .arrow-slider {
     flex: 1 0 auto;
     max-width: 1147px;
     height: 100%;
     overflow: hidden;
+    // overflow: scroll;
     padding: 0 17px;
     position: relative;
+
+    .fade-wrapper {
+      // padding: 0 20px;
+      // overflow: visible;
+      // .transition {
+      //   width: 100%;
+      //   overflow: visible;
+      // }
+    }
 
     .slider {
       position: absolute;

@@ -84,7 +84,7 @@ export default {
 
 @media (max-width: 1286px) {
   .stock-card {
-    width: 323px;
+    width: 341px;
     height: 292px;
 
     &__image {

@@ -2,6 +2,7 @@
   <div class="stocks-container">
     <div class="stocks">
       <div 
+        v-if="!isMobile"
         data-aos="fade-up" 
         data-aos-duration="300"
         data-aos-once="true"
@@ -9,8 +10,21 @@
         class="stocks__title">
         <span>{{stocksStrings.title[0]}}</span> <span>{{stocksStrings.title[1]}}</span>
       </div>
+      <div 
+        v-else
+        class="stocks__title">
+        <span>{{stocksStrings.title[0]}}</span> <span>{{stocksStrings.title[1]}}</span>
+      </div>
       <div class="stocks__cards">
-        <ArrowSlider animAnchor=".stocks__title" :animOffset="600" :itemWidth="535" :itemsCount="stocksStrings.stocks.length">
+        <ArrowSlider v-if="isMobile" :itemWidth="341" :itemsCount="stocksStrings.stocks.length">
+          <transition-group name="fade" tag="div">
+            <StockCard 
+              v-for="i in [stockIndex]" :key="i"
+              :stock="stocksStrings.stocks[i]"
+              />
+          </transition-group>
+        </ArrowSlider>
+        <ArrowSlider v-else animAnchor=".stocks__title" :animOffset="600" :itemWidth="535" :itemsCount="stocksStrings.stocks.length">
           <StockCard 
             data-aos="zoom-out" 
             data-aos-duration="300"
@@ -18,15 +32,8 @@
             data-aos-once="true"
             data-aos-anchor=".stocks__title"
             data-aos-offset="600"
-            v-for="(stock, index) in stocksStrings.stocks" :key="index" :stock="stock"/>
-          <!-- <StockCard 
-            data-aos="zoom-out" 
-            data-aos-duration="300"
-            data-aos-delay="300"
-            data-aos-once="true"
-            data-aos-anchor=".stocks__title"
-            data-aos-offset="600"
-            v-for="(stock, index) in stocksStrings.stocks" :key="index + 2" :stock="stock"/> -->
+            v-for="(stock, index) in stocksStrings.stocks" :key="index" :stock="stock"
+            />
         </ArrowSlider>
       </div>
     </div>
@@ -37,7 +44,8 @@
 import StockCard from './StockCard';
 import ArrowSlider from '../ArrowSlider/ArrowSlider';
 
-import {stocksStrings} from '../../tools/strings';
+import { stocksStrings } from '../../tools/strings';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Stocks',
@@ -47,12 +55,32 @@ export default {
   data() {
     return {
       stocksStrings,
+      timer: null,
+      stockIndex: 0,
     }
   },
+  computed: {
+    ...mapGetters([
+      'isMobile'
+    ]),
+  },
+  mounted() {
+    this.timer = setInterval(this.next, 4000);
+  },
+  methods: {
+    next() {
+      this.stockIndex = (this.stockIndex + 1) % stocksStrings.stocks.length
+    }
+  },
+  beforeDestroy() {
+    clearInterval(this.timer)
+  }
 }
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/fade.scss';
+
 .stocks-container {
   width: 100%;
   height: 733px;
@@ -97,6 +125,8 @@ export default {
 
 @media (max-width: 1286px) {
   .stocks-container {
+    padding-top: 18px;
+    height: 400px;
     .stocks {
       padding-top: 0;
 
