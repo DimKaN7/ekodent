@@ -18,13 +18,7 @@
       </div>
       <div class="fade-wrapper" v-else>
         <transition mode="out-in" name="fade">
-          <div class="fade-slider" v-if="scrollIndex == 0">
-            <slot></slot>
-          </div>
-          <div class="fade-slider" v-else-if="scrollIndex == 1">
-            <slot></slot>
-          </div>
-          <div class="fade-slider" v-else>
+          <div class="fade-slider" v-for="i in [scrollIndex]" :key="i">
             <slot></slot>
           </div>
         </transition>

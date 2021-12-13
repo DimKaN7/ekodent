@@ -89,12 +89,12 @@ export default {
 .submenu {
   width: 100%;
   height: 100%;
-  background-color: #F0F0F0;
+  background-color: #fff;
   border: 2px solid #4D8E4D;
   border-top: none;
   padding: 23px 5px;
   border-radius: 0 0px 10px 10px;
-  z-index: 2;
+  z-index: 10;
 
   &__item {
     cursor: pointer;
