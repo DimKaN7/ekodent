@@ -17,11 +17,17 @@
         <slot></slot>
       </div>
       <div class="fade-wrapper" v-else>
-        <transition-group class="transition" name="fade" tag="div">
-          <div class="fade-slider" v-for="i in [scrollIndex]" :key="i">
+        <transition mode="out-in" name="fade">
+          <div class="fade-slider" v-if="scrollIndex == 0">
             <slot></slot>
           </div>
-        </transition-group>
+          <div class="fade-slider" v-else-if="scrollIndex == 1">
+            <slot></slot>
+          </div>
+          <div class="fade-slider" v-else>
+            <slot></slot>
+          </div>
+        </transition>
       </div>
     </div>
     <Arrow 
@@ -148,12 +154,8 @@ export default {
     position: relative;
 
     .fade-wrapper {
-      // padding: 0 20px;
-      // overflow: visible;
-      // .transition {
-      //   width: 100%;
-      //   overflow: visible;
-      // }
+      display: flex;
+      justify-content: center;
     }
 
     .slider {

@@ -1,14 +1,11 @@
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.9s ease;
-  overflow: hidden;
-  visibility: visible;
-  position: absolute;
   opacity: 1;
 }
 
 .fade-enter,
 .fade-leave-to {
-  visibility: hidden;
+  position: absolute;
   opacity: 0;
 }
