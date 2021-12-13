@@ -81,4 +81,21 @@ export default {
     }
   }
 }
+
+@media (max-width: 1286px) {
+  .stock-card {
+    width: 341px;
+    height: 292px;
+
+    &__image {
+      width: 100%;
+      height: 167px;
+    }
+
+    &__title {   
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  }
+}
 </style>

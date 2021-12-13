@@ -1,13 +1,33 @@
 <template>
   <div class="doctor-card">
     <div 
+      v-if="isMobile"
+      class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}">
+    </div>
+    <div 
+      v-else
       data-aos="zoom-in"
       data-aos-duration="300"
       data-aos-once="true"
       data-aos-anchor=".doctors__title"
       data-aos-offset="650"
-      class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}"></div>
+      class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}">
+    </div>
+
     <div 
+      v-if="isMobile"
+      class="doctor-card__info">
+      <div class="card-info">
+        <div class="card-info__name">
+          <span>{{doctor.name.split(' ')[0]}}</span> <span>{{doctor.name.split(' ')[1]}}</span>
+        </div>
+        <div class="card-info__position">{{doctor.position}}</div>
+        <div class="card-info__experience" v-if="doctor.experience">{{doctor.experience}}</div>
+      </div>
+      <div class="card-info__button">{{doctor.buttonText}}</div>
+    </div>
+    <div 
+      v-else
       data-aos="fade"
       data-aos-duration="1000"
       data-aos-delat="300"
@@ -24,10 +44,12 @@
       </div>
       <div class="card-info__button">{{doctor.buttonText}}</div>
     </div>
+
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'DoctorCard',
   props: {
@@ -35,6 +57,11 @@ export default {
       type: Object,
       required: true,
     }
+  },
+  computed: {
+    ...mapGetters([
+      'isMobile'
+    ])
   }
 }
 </script>
@@ -119,6 +146,16 @@ export default {
       }
     }
   }
+}
 
+@media (max-width: 1286px) {
+  .doctor-card {
+    width: 341px;
+
+    &__info {
+      // box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+      // position: relative;
+    }
+  }
 }
 </style>

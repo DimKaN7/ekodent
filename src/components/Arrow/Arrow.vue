@@ -4,7 +4,7 @@
     <transition name="fade">
       <div class="arrow" @mouseenter="color = '#E64243';" @mouseleave="color = 'black';" @click="$emit('arrowClick', left)"
         v-if="show">
-        <svg width="34" height="65" viewBox="0 0 34 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg :width="width" :height="height" :viewBox="`0 0 ${width} ${height}`" fill="none" xmlns="http://www.w3.org/2000/svg">
           <line x1="2.5" y1="-2.5" x2="41.5818" y2="-2.5" transform="matrix(-0.668026 0.744138 0.744138 0.668026 33.585 2.38086)" :stroke="color" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
           <line x1="3.94838" y1="31.7386" x2="30.056" y2="60.8209" :stroke="color" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -28,7 +28,15 @@ export default {
     show: {
       type: Boolean,
       required: true,
-    }
+    },
+    width: {
+      type: Number,
+      required: true,
+    },
+    height: {
+      type: Number,
+      required: true,
+    },
   },
   computed: {
     style() {

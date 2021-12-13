@@ -50,7 +50,8 @@ export default {
 
   &__info {
     width: 100%;
-    height: 599px;
+    min-height: 599px;
+    height: fit-content;
     position: absolute;
     left: 0;
     top: 35px;
@@ -58,7 +59,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 90px 17px 105px;
+    padding: 90px 17px 0px;
 
     .card-info {
       width: 100%;
@@ -101,6 +102,18 @@ export default {
           background-color: #4D8E4D;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1286px) {
+  .review-card {
+    width: 341px;
+    height: 533px;
+
+    &__info {
+      min-height: 498px;
+      height: fit-content;
     }
   }
 }

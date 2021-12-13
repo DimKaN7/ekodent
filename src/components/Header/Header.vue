@@ -6,32 +6,38 @@
       <div class="header">
         <div class="info">
           <a class="info__logo" href="#"></a>
-          <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="headerStrings[index].texts"
-            :hrefs="headerStrings[index].hrefs" :styles="index === 3 ? 'font-weight: 500; font-size: 18px;' : ''"/>
-        </div>
-
-        <div class="menu">
-          <div class="">
-            <div class="menu-details dropdown dropbtn">
-              <div class="menu-details-item">
-                <div class="menu-details-block">
-                  <div v-for="(item, index) in additionalMenuItems" :key="item" @click="$router.push(additionalMenuUrl[index])">
-                    {{item}}
-                  </div>
+          <!-- <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="windowWidth < 1287 ? headerStrings.mobile[index].texts : headerStrings.desktop[index].texts"
+            :hrefs="windowWidth < 1287 ? headerStrings.mobile[index].hrefs : headerStrings.desktop[index].hrefs" :styles="index === 3 ? 'font-weight: 500; font-size: 18px;' : ''"/> -->
+            <InfoContent v-for="(s, index) in (isMobile ? headerStrings.mobile : headerStrings.desktop)" 
+            :key="index" :icon="isMobile ? '' : icons[index]" :texts="s.texts"
+            :hrefs="s.hrefs" :styles="isMobile
+                                      ? 'font-weight: 500; font-size: 14px;' 
+                                      : 
+                                        index == 3 
+                                        ? 'font-weight: 500; font-size: 18px;'
+                                        : ''"/>
+                                        <!-- <div v-if="isMobile" class="menu-details dropdown dropbtn">
+            <div v-if="isMobile" class="menu-details-item">
+              <div class="menu-details-block">
+                <div v-for="(item, index) in additionalMenuItems" :key="item" @click="$router.push(additionalMenuUrl[index])">
+                  {{item}}
                 </div>
               </div>
-
             </div>
-          </div>
+          </div> -->
+          <Menu v-if="isMobile"/>
+        </div>
 
+        <div class="menu" v-if="!isMobile">
+          <Menu v-if="!isMobile"/>
           <div class="menu-items">
-
-            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="$router.push(menuUrl[index])">
+            <div :class="['menu-items__item', (index === selectedItem) && 'selected']" v-for="(item, index) in menuItems" :key="item" @click="() => onMenuItemClick(index)">
               {{item}}
             </div>
             <div class="sign-up" @click="showModal">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
           </div>
         </div>
+        <Submenu v-if="submenuVisible" :items="isMobile ? additionalSubmenuItems : submenuItems"/>
       </div>
       <b-modal ref="my-modal" hide-footer hide-header title="Using Component Methods">
         <div class="make-appointment">
@@ -70,11 +76,14 @@
 </template>
 
 <script>
+import { mapActions, mapGetters, mapState } from 'vuex'
 import Mail from '../../assets/Header/Mail.png';
 import Time from '../../assets/Header/Time.png';
 import Location from '../../assets/Header/Location.png';
 import Phone from '../../assets/Header/Phone.png';
 import Details from '../../assets/Header/Details.png';
+import Menu from '../Menu/Menu.vue'
+import Submenu from '../Menu/SubMenu.vue'
 
 import InfoContent from './InfoContent';
 import {headerStrings} from '../../tools/strings';
@@ -83,6 +92,8 @@ export default {
   name: 'Header',
   components: {
     InfoContent,
+    Menu,
+    Submenu,
   },
   props: {
     scrolled: {
@@ -100,17 +111,83 @@ export default {
       menuUrl: [
         '/', '/About', '/Price', '/Services/Therapy', '/Doctors', '/Feedback', '/Questions'
       ],
-      additionalMenuItems: [
-        'Лицензия', 'Вакансии', 'Новости', 'Акции'
+      // additionalMenuItems: [
+      //   'Лицензия', 'Вакансии', 'Новости', 'Акции'
+      // ],
+      // additionalMenuUrl: [
+      //   '/Certificates', '/Vacancies', '/News', '/Stocks'
+      // ],
+      submenuItems: [
+        {
+          title: 'Лицензия',
+          url: '/Certificates'
+        },
+        {
+          title: 'Вакансии',
+          url: '/Vacancies'
+        },
+        {
+          title: 'Новости',
+          url: '/News'
+        },
+        {
+          title: 'Акции',
+          url: '/Stocks'
+        }
       ],
-      additionalMenuUrl: [
-        '/Certificates', '/Vacancies', '/News', '/Stocks'
+      additionalSubmenuItems: [
+        {
+          title: 'Главная',
+          url: '/'
+        },
+        {
+          title: 'О клинике',
+          url: '/About'
+        },
+        {
+          title: 'Цены',
+          url: '/Price'
+        },
+        {
+          title: 'Услуги',
+          url: '/Services/Therapy'
+        },
+        {
+          title: 'Врачи',
+          url: '/Doctors'
+        },
+        {
+          title: 'Отзывы',
+          url: '/Feedback'
+        },
+        {
+          title: 'Вопросы',
+          url: '/Questions'
+        },
+        {
+          title: 'Лицензия',
+          url: '/Certificates'
+        },
+        {
+          title: 'Вакансии',
+          url: '/Vacancies'
+        },
+        {
+          title: 'Новости',
+          url: '/News'
+        },
+        {
+          title: 'Акции',
+          url: '/Stocks'
+        }
       ],
-      selectedItem: null,
       Details,
     }
   },
   methods: {
+    ...mapActions([
+      'setSelectedItem'
+    ]),
     showModal() {
       this.$refs['my-modal'].show()
     },
@@ -119,20 +196,34 @@ export default {
     },
     sendForm(){
 
+    },
+    onMenuItemClick(index) {
+      this.$router.push(this.menuUrl[index])
+      this.setSelectedItem(index)
     }
   },
   // TODO Сделал инвалидно, нужно исправить и делать это дело одним методом (Или же вообще без их использования)
   watch:{
-    $route: function(to) {
-      this.menuUrl.forEach((el, index) => {
-        if (el === to['fullPath']){
-          this.selectedItem =  index;
-        }
-      });
+    $route: function() {
+      // this.menuUrl.forEach((el, index) => {
+      //   if (el === to['fullPath']){
+      //     this.selectedItem =  index;
+      //   }
+      // });
       window.scrollTo({
         top: 0,
       })
     }
+  },
+  computed: {
+    ...mapState([
+      'windowWidth',
+      'submenuVisible',
+      'selectedItem',
+    ]),
+    ...mapGetters([
+      'isMobile'
+    ]),
   },
   mounted(){
     this.menuUrl.forEach((el, index) => {
@@ -148,7 +239,6 @@ export default {
 
 .make-appointment{
   padding: 35px;
-
 
   &__title{
     font-style: normal;
@@ -279,11 +369,13 @@ export default {
   }
 
   .header {
-    width: 1267px;
+    width: 1287px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 10px;
+    position: relative;
 
     .info {
       width: 100%;
@@ -367,6 +459,28 @@ export default {
         }
       }
     }
+  }
+}
+
+@media (max-width: 1286px) {
+  .header-container {
+    width: 100%;
+    padding-top: 15px;
+    height: 99px;
+  }
+
+  .info {
+    font-size: 14px;
+    &__logo {
+      width: 180px !important;
+      height: 43px !important;
+    }
+  }
+
+  .menu-details {
+    width: 32px !important;
+    height: 32px !important;
+    margin: 0 !important;
   }
 }
 </style>

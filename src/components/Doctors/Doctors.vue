@@ -2,6 +2,7 @@
   <div class="doctors-container">
     <div class="doctors">
       <div 
+        v-if="!isMobile"
         data-aos="fade-up" 
         data-aos-duration="300"
         data-aos-once="true"
@@ -9,10 +10,19 @@
         class="doctors__title">
         <span>{{doctorsStrings.title[0]}}</span> <span>{{doctorsStrings.title[1]}}</span>
       </div>
+      <div 
+        v-else
+        class="doctors__title">
+        <span>{{doctorsStrings.title[0]}}</span> <span>{{doctorsStrings.title[1]}}</span>
+      </div>
       <div class="doctors__cards">
-        <ArrowSlider animAnchor=".doctors__title" :animOffset="650" arrowStyles="padding-top: 126.5px; padding-bottom: 17px;" :itemWidth="301" :itemsCount="doctorsStrings.doctors.length * 2">
+        <ArrowSlider v-if="isMobile" :itemWidth="341" :itemsCount="doctorsStrings.doctors.length">
+          <transition-group name="fade" tag="div">
+            <DoctorCard v-for="i in [doctorIndex]" :key="i" :doctor="doctorsStrings.doctors[i]"/>
+          </transition-group>
+        </ArrowSlider>
+        <ArrowSlider v-else animAnchor=".doctors__title" :animOffset="650" arrowStyles="padding-top: 126.5px; padding-bottom: 17px;" :itemWidth="301" :itemsCount="doctorsStrings.doctors.length">
           <DoctorCard v-for="(d, index) in doctorsStrings.doctors" :key="index" :doctor="d"/>
-          <DoctorCard v-for="(d, index) in doctorsStrings.doctors" :key="index + 3" :doctor="d"/>
         </ArrowSlider>
       </div>
     </div>
@@ -23,7 +33,8 @@
 import DoctorCard from './DoctorCard';
 import ArrowSlider from '../ArrowSlider/ArrowSlider';
 
-import {doctorsStrings} from '../../tools/strings';
+import { doctorsStrings } from '../../tools/strings';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Doctors',
@@ -34,12 +45,32 @@ export default {
   data() {
     return {
       doctorsStrings,
+      timer: null,
+      doctorIndex: 0,
     }
+  },
+  computed: {
+    ...mapGetters([
+      'isMobile'
+    ])
+  },
+  mounted() {
+    this.timer = setInterval(this.next, 4000);
+  },
+  methods: {
+    next() {
+      this.doctorIndex = (this.doctorIndex + 1) % doctorsStrings.doctors.length
+    }
+  },
+  beforeDestroy() {
+    clearInterval(this.timer)
   }
 }
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/fade.scss';
+
 .doctors-container {
   width: 100%;
   height: 835px;
@@ -71,6 +102,21 @@ export default {
       height: 100%;
       display: flex;
       flex-direction: row;
+    }
+  }
+}
+
+@media (max-width: 1286px) {
+  .doctors-container {
+    padding-top: 25px;
+    height: 625px;
+    .doctors {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      &__title {
+        margin-bottom: 30px;
+      }
     }
   }
 }

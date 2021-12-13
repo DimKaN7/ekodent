@@ -1,13 +1,11 @@
 <template>
   <div class="recommend" :style="{backgroundImage: `url(${Background})`}">
-    <div class="recommend-gradient"></div> 
+    <!-- <div class="recommend-gradient"></div>  -->
     <div class="recommend__content">
 
       <div class="text" v-for="(t,index) in recommendStrings.text" :key="index">
         {{t}}
       </div>
-
-<!--      <div class="consultation">ЗАПИСАТЬСЯ НА ПРИЁМ</div>-->
       <div class="d-flex justify-content-center">
         <sign-up class="recommend__sign_up"></sign-up>
       </div>
@@ -100,5 +98,13 @@ export default {
 
 }
 
-
+@media (max-width: 1286px) {
+  .recommend {
+    height: fit-content;
+    padding: 7px 23px 73px; 
+    background-position: 100px 200px;
+    background: no-repeat;
+    background-size: cover;
+  }
+}
 </style>

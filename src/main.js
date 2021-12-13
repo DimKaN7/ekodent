@@ -8,7 +8,7 @@ import { BootstrapVue} from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueYandexMetrika from 'vue-yandex-metrika'
-
+import {store} from './store/store'
 
 Vue.config.productionTip = false
 
@@ -21,6 +21,7 @@ new Vue({
     AOS.init()
   },
   render: h => h(App),
+  store,
   router
 }).$mount('#app')
 

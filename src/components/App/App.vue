@@ -1,33 +1,57 @@
 <template>
   <div class="app">
-    <Header :scrolled='scrollIndex >= 227'/>
+    <Header :scrolled='scrollIndex >= 227 && !isMobile'/>
     <router-view></router-view>
-    <Footer />
-    <ScrollUp v-if="scrollIndex >= 227" />
+    <Footer v-if="!isMobile" />
+    <FooterMobile v-else />
+    <!-- <ScrollUp v-if="scrollIndex >= 227" /> -->
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters, mapState } from 'vuex'
+
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import ScrollUp from '../ScrollUp/ScrollUp';
+import FooterMobile from '../Footer/FooterMobile';
+// import ScrollUp from '../ScrollUp/ScrollUp';
 
 
 export default {
   name: 'App',
   components: {
-    Header, Footer, ScrollUp
+    Header,  
+    Footer,
+    FooterMobile, 
+    // ScrollUp
+  },
+  computed: {
+    ...mapState([
+      'windowWidth'
+    ]),
+    ...mapGetters([
+      'isMobile'
+    ]),
   },
   methods: {
+    ...mapActions([
+      'setWindowWidth'
+    ]),
     onScroll() {
       this.scrollIndex = window.scrollY;
+    },
+    onResize() {
+      this.setWindowWidth(window.innerWidth)
     }
   },
   created() {
-    window.addEventListener('scroll', this.onScroll);
+    this.onResize()
+    window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('resize', this.onResize)
   },
   destroyed() {
-    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener('resize', this.onResize)
   },
   data() {
     return {
