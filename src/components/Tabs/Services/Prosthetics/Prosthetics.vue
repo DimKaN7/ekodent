@@ -6,10 +6,10 @@
     <div class="Prosthetics-tab-line">
     </div>
     <div class="row therapy-text">
-      <div class="col-4">
+      <div class="col-sm-4 col-12">
         <span v-html="ProstheticsTabStrings.text[0]"></span>
       </div>
-      <div class="col-8">
+      <div class="col-sm-8 col-12">
         <div class="background_image" :style="{'background-image': `url(${Prosthetics})`}">
         </div>
       </div>
@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 .Prosthetics-tab-title{
   font-family: Roboto;
   font-style: normal;
@@ -74,6 +74,10 @@ export default {
   background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 10px;
+  @media (max-width:540px) {
+    height: 60vw;
+    margin-top: 20px;
+  }
 }
 
 .therapy-text{

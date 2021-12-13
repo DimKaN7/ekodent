@@ -10,7 +10,7 @@
       data-aos-duration="300"
       data-aos-once="true"
       data-aos-anchor=".doctors__title"
-      data-aos-offset="650"
+      :data-aos-offset=aos_offset
       class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}">
     </div>
 
@@ -33,7 +33,7 @@
       data-aos-delat="300"
       data-aos-once="true"
       data-aos-anchor=".doctors__title"
-      data-aos-offset="650"
+      :data-aos-offset=aos_offset
       class="doctor-card__info">
       <div class="card-info">
         <div class="card-info__name">
@@ -56,6 +56,9 @@ export default {
     doctor: {
       type: Object,
       required: true,
+    },
+    aos_offset:{
+      type: String
     }
   },
   computed: {

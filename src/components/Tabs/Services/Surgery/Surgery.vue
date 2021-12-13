@@ -6,10 +6,10 @@
     <div class="Surgery-tab-line">
     </div>
     <div class="row therapy-text therapy-text-block">
-      <div class="col-6  d-flex align-items-center">
+      <div class="col-sm-6 col-12 d-flex align-items-center">
         <span v-html="SurgeryTabStrings.text[0]"></span>
       </div>
-      <div class="col-6">
+      <div class="col-sm-6 col-12">
         <div class="background_image" :style="{'background-image': `url(${Surgery})`}">
         </div>
       </div>
@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 .Surgery-tab-title{
   font-family: Roboto;
   font-style: normal;
@@ -74,6 +74,10 @@ export default {
   background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 10px;
+  @media (max-width:540px) {
+    height: 60vw;
+    margin-top: 20px;
+  }
 }
 
 .therapy-text{
@@ -82,6 +86,9 @@ export default {
 
 .therapy-text-block{
   height: 300px;
+  @media (max-width:540px) {
+    height: 100%
+  }
 }
 
 .Surgery-tab-block__infoBanner{
