@@ -10,7 +10,7 @@
       </div>
       <div class="about-tab-logo" :style="{'background-image': `url(${Logo})`}">
       </div>
-      <div class="about-tab-text" v-for="(t,index) in aboutTabStrings.text" :key="index" v-html="t">
+      <div class="about-tab-text col-12" v-for="(t,index) in aboutTabStrings.text" :key="index" v-html="t">
       </div>
     </div>
 <!--    <div class="card-container" :style="{'background-image': `url(${Background})`}">-->
@@ -58,6 +58,9 @@ export default {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  @media (max-width:540px) {
+    height: 200px;
+  }
 }
 
 .about-tab-container {

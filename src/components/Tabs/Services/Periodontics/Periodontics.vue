@@ -10,13 +10,13 @@
         <span v-html="PeriodonticsTabStrings.text[0]"></span>
       </div>
       <div class="row Periodontics-text">
-        <div class="col-6">
+        <div class="col-sm-6 col-12 ">
           <div class="Periodontics-tab-block__subtitle">
             <h5>{{PeriodonticsTabStrings.subTitle[0]}}</h5>
           </div>
           <span v-html="PeriodonticsTabStrings.text[1]"></span>
         </div>
-        <div class="col-6">
+        <div class="col-sm-6 col-12 ">
           <div class="background_image" :style="{'background-image': `url(${Periodontics})`}">
           </div>
         </div>
@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 
 .Periodontics-tab-title{
   font-family: Roboto;
@@ -71,6 +71,10 @@ export default {
   background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 10px;
+    @media (max-width:540px) {
+      height: 60vw;
+      margin-top: 20px;
+    }
 }
 
 .Periodontics-text{

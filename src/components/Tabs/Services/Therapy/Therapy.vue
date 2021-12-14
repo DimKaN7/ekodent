@@ -6,16 +6,16 @@
     <div class="therapy-tab-line">
     </div>
     <div class="row therapy-text therapy-text-block">
-      <div class="col-5 d-flex align-items-center">
+      <div class="col-sm-5 col-12 d-flex align-items-center">
         <span v-html="therapyTabStrings.text[0]"></span>
       </div>
-      <div class="col-7 background_image_block">
+      <div class="col-sm-7 col-12 background_image_block">
         <div class="background_image" :style="{'background-image': `url(${Symptoms})`}">
         </div>
       </div>
     </div>
-    <div class="therapy-tab-block__subtitle">
-      <h5>{{therapyTabStrings.subTitle[0]}}</h5>
+    <div class="therapy-tab-block__subtitle row">
+      <h5 class="col-12">{{therapyTabStrings.subTitle[0]}}</h5>
     </div>
     <div class="therapy-text">
       <span  v-html="therapyTabStrings.text[1]"></span>
@@ -117,7 +117,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 
 .therapy-tab-title{
   font-family: Roboto;
@@ -145,10 +145,19 @@ export default {
 
 .therapy-text-block{
   height: 300px;
+  @media (max-width:540px) {
+    height: 100%;
+  }
 }
 
 .background_image_block{
   padding-left: 100px;
+  @media (max-width:540px) {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    height: 300px;
+  }
 }
 
 .therapy-text{

@@ -22,7 +22,7 @@
           </transition-group>
         </ArrowSlider>
         <ArrowSlider v-else animAnchor=".doctors__title" :animOffset="650" arrowStyles="padding-top: 126.5px; padding-bottom: 17px;" :itemWidth="301" :itemsCount="doctorsStrings.doctors.length">
-          <DoctorCard v-for="(d, index) in doctorsStrings.doctors" :key="index" :doctor="d"/>
+          <DoctorCard v-for="(d, index) in doctorsStrings.doctors" :key="index" :doctor="d" :aos_offset="650"/>
         </ArrowSlider>
       </div>
     </div>

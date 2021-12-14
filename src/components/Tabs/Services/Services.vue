@@ -1,7 +1,7 @@
 <template>
   <div class="services-tab__container">
     <div class="row">
-      <div class="col-3">
+      <div class="col-sm-3 col-12">
         <b-nav vertical class="services-tab-navbar">
           <b-nav-item to="/Services/Therapy" :active='$route.name =="Therapy"' href="#my-nav-dropdown">Терапия</b-nav-item>
 <!--          <b-nav-item class="sub-nav" to="/Services/Restoration" :active='$route.name =="Restoration"'>Реставрация</b-nav-item>-->
@@ -21,7 +21,8 @@
 <!--          <b-nav-item to="/Services/SurgicalMethods" :active='$route.name =="SurgicalMethods"'>Хирургические методы</b-nav-item>-->
         </b-nav>
       </div>
-      <div class="col-9">
+      <div class="col-sm-9 col-12">
+
       <div class="services-tab-info">
         <router-view style="text-align: justify;"></router-view>
       </div>
@@ -45,7 +46,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 
 .services-tab__container{
   flex-wrap: inherit;
@@ -59,8 +60,12 @@ export default {
 }
 
 .services-tab-navbar{
-  width: 376px;
+  /*width: 376px;*/
   height: 100%;
+  @media (max-width:540px) {
+    text-align: center;
+    padding-bottom: 70px;
+  }
 }
 
 .services-tab-navbar .nav-link{
