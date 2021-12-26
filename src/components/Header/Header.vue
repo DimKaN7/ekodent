@@ -11,10 +11,10 @@
             <InfoContent v-for="(s, index) in (isMobile ? headerStrings.mobile : headerStrings.desktop)" 
             :key="index" :icon="isMobile ? '' : icons[index]" :texts="s.texts"
             :hrefs="s.hrefs" :styles="isMobile
-                                      ? 'font-weight: 500; font-size: 14px;' 
+                                      ? 'font-weight: 500; font-size: 11px;'
                                       : 
                                         index == 3 
-                                        ? 'font-weight: 500; font-size: 18px;'
+                                        ? 'font-weight: 500; font-size: 14px;'
                                         : ''"/>
                                         <!-- <div v-if="isMobile" class="menu-details dropdown dropbtn">
             <div v-if="isMobile" class="menu-details-item">

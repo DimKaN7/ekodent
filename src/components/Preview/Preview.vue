@@ -117,6 +117,10 @@ export default {
           display: flex;
           flex-direction: column;
           align-items: center;
+          @media (max-width:360px) {
+            justify-content: center;
+            width: 100%;
+          }
 
           &__icon {
             width: 60px;
