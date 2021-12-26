@@ -6,7 +6,7 @@
         data-aos="fade-up" 
         data-aos-duration="300"
         data-aos-once="true"
-        data-aos-offset="650"
+        data-aos-offset="600"
         class="doctors__title">
         <span>{{doctorsStrings.title[0]}}</span> <span>{{doctorsStrings.title[1]}}</span>
       </div>
@@ -73,14 +73,13 @@ export default {
 
 .doctors-container {
   width: 100%;
-  height: 835px;
+  height: 745px;
   display: flex;
   justify-content: center;
 
   .doctors {
     width: 1267px;
     height: 100%;
-    padding: 100px 0 83px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,7 +108,7 @@ export default {
 @media (max-width: 1286px) {
   .doctors-container {
     padding-top: 25px;
-    height: 625px;
+    height: 750px;
     .doctors {
       padding-top: 0;
       padding-bottom: 0;
@@ -117,6 +116,14 @@ export default {
       &__title {
         margin-bottom: 30px;
       }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .doctors-container {
+    .doctors {
+      width: 100%;
     }
   }
 }

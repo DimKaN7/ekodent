@@ -68,4 +68,21 @@ export default {
     left: 10.69px;
   }
 }
+
+@media (max-width: 350px) {
+  .service-card {
+    width: 300px;
+    height: 276px;
+
+    &__image {
+      width: 264px;
+      height: 239px;
+    }
+
+    &__title {
+      top: 235.58px;
+      left: 10.69px;
+    }
+  }
+}
 </style>

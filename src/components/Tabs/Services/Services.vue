@@ -2,7 +2,7 @@
   <div class="services-tab__container">
     <div class="row">
       <div class="col-sm-3 col-12">
-        <b-nav vertical class="services-tab-navbar">
+        <b-nav @click="onClick" vertical class="services-tab-navbar">
           <b-nav-item to="/Services/Therapy" :active='$route.name =="Therapy"' href="#my-nav-dropdown">Терапия</b-nav-item>
 <!--          <b-nav-item class="sub-nav" to="/Services/Restoration" :active='$route.name =="Restoration"'>Реставрация</b-nav-item>-->
 <!--          <b-nav-item class="sub-nav" to="/Services/PersonalCleaning" :active='$route.name =="PersonalCleaning"'>Профессиональная чистка</b-nav-item>-->
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import {servicesTabStrings} from '../../../tools/strings';
 
 export default {
@@ -41,6 +42,16 @@ export default {
   data() {
     return {
       servicesTabStrings,
+    }
+  },
+  computed: {
+    ...mapGetters(['isMobile'])
+  },
+  methods: {
+    onClick() {
+      if (this.isMobile) {
+        window.scrollTo(0, 300)
+      }
     }
   }
 }

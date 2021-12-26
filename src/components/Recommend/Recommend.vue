@@ -107,4 +107,14 @@ export default {
     background-size: cover;
   }
 }
+
+@media (max-width: 350px) {
+  .recommend {
+    &__content {
+      .text {
+        font-size: 28px !important;
+      }
+    }
+  }
+}
 </style>

@@ -483,4 +483,16 @@ export default {
     margin: 0 !important;
   }
 }
+
+@media (max-width: 350px) {
+  .header-container {
+    .header {
+      .info {
+        &__logo {
+          width: 150px !important;
+        }
+      }
+    }
+  }
+}
 </style>

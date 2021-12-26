@@ -38,14 +38,14 @@ export default {
 <style lang="scss">
 .services-container {
   width: 100%;
-  height: 1106px;
+  // height: 1106px;
   display: flex;
   justify-content: center;
 
   .services {
     width: 1267px;
     height: 100%;
-    padding: 240px 0 100px;
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;

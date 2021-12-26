@@ -117,4 +117,10 @@ export default {
     }
   }
 }
+
+@media (max-width: 350px) {
+  .review-card {
+    width: 300px;
+  }
+}
 </style>

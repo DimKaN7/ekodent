@@ -82,8 +82,6 @@ export default {
 @import '../../../assets/scss/fade.scss';
 
 .stocks-container {
-  padding-top: 120px;
-  margin-bottom: 60px;
   width: 100%;
   height: 733px;
   display: flex;
@@ -128,7 +126,7 @@ export default {
 @media (max-width: 1286px) {
   .stocks-container {
     padding-top: 120px;
-    height: 400px;
+    height: 495px;
     .stocks {
       padding-top: 0;
 

@@ -165,4 +165,13 @@ export default {
     }
   }
 }
+
+@media (max-width: 350px) {
+  .arrow-slider-container {
+    .arrow-slider {
+      padding: 0;
+      width: 100%;
+    }
+  }
+}
 </style>

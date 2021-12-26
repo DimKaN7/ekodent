@@ -11,7 +11,7 @@
         data-aos="fade-up" 
         data-aos-duration="300"
         data-aos-once="true"
-        data-aos-offset="650"
+        data-aos-offset="600"
         class="reviews__title">
         <span>{{reviewsStrings.title[0]}}</span> <span>{{reviewsStrings.title[1]}}</span>
       </div>
@@ -22,14 +22,14 @@
               v-for="i in [reviewIndex]" :key="i" :review="reviewsStrings.reviews[i]"/>
           </transition-group>
         </ArrowSlider>
-        <ArrowSlider v-else animAnchor=".reviews__title" :animOffset="650" arrowStyles="padding-top: 35px;" :itemWidth="301" :itemsCount="reviewsStrings.reviews.length">
+        <ArrowSlider v-else animAnchor=".reviews__title" :animOffset="600" arrowStyles="padding-top: 35px;" :itemWidth="301" :itemsCount="reviewsStrings.reviews.length">
           <ReviewCard
             data-aos="fade-up"
             data-aos-duration="300"
             data-aos-delay="300"
             data-aos-once="true"
             data-aos-anchor=".reviews__title" 
-            data-aos-offset="650"
+            data-aos-offset="600"
             v-for="(review, index) in reviewsStrings.reviews" :key="index" :review="review"/>
         </ArrowSlider>
       </div>
@@ -83,6 +83,7 @@ export default {
   height: 916px;
   display: flex;
   justify-content: center;
+  padding-top: 0px !important;
 
   .reviews {
     width: 1267px;

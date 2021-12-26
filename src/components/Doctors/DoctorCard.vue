@@ -10,7 +10,7 @@
       data-aos-duration="300"
       data-aos-once="true"
       data-aos-anchor=".doctors__title"
-      :data-aos-offset=aos_offset
+      :data-aos-offset="aos_offset"
       class="doctor-card__image" :style="{'background-image': `url(${doctor.image})`}">
     </div>
 
@@ -24,7 +24,8 @@
         <div class="card-info__position">{{doctor.position}}</div>
         <div class="card-info__experience" v-if="doctor.experience">{{doctor.experience}}</div>
       </div>
-      <div class="card-info__button">{{doctor.buttonText}}</div>
+      <!-- <div class="card-info__button">{{doctor.buttonText}}</div> -->
+      <SignUp />
     </div>
     <div 
       v-else
@@ -42,16 +43,22 @@
         <div class="card-info__position">{{doctor.position}}</div>
         <div class="card-info__experience" v-if="doctor.experience">{{doctor.experience}}</div>
       </div>
-      <div class="card-info__button">{{doctor.buttonText}}</div>
+      <!-- <div class="card-info__button">{{doctor.buttonText}}</div> -->
+      <SignUp />
     </div>
 
   </div>
 </template>
 
 <script>
+import SignUp from '../SignUp/SignUp.vue'
+
 import { mapGetters } from 'vuex'
 export default {
   name: 'DoctorCard',
+  components: {
+    SignUp
+  },
   props: {
     doctor: {
       type: Object,
@@ -109,6 +116,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 42px;
 
       &__name {
         height: 56px;
@@ -159,6 +167,12 @@ export default {
       // box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
       // position: relative;
     }
+  }
+}
+
+@media (max-width: 350px) {
+  .doctor-card {
+    width: 300px;
   }
 }
 </style>

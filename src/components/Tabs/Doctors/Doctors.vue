@@ -72,16 +72,15 @@ export default {
 @import '../../../assets/scss/fade.scss';
 
 .doctors-container {
-  padding-top: 100px;
   width: 100%;
-  height: 835px;
+  height: 745px;
   display: flex;
   justify-content: center;
 
   .doctors {
     width: 1267px;
     height: 100%;
-    padding: 100px 0 83px 0;
+    padding-top: 100px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,7 +109,7 @@ export default {
 @media (max-width: 1286px) {
   .doctors-container {
     padding-top: 120px;
-    height: 625px;
+    height: 750px;
     .doctors {
       padding-top: 0;
       padding-bottom: 0;

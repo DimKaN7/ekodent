@@ -126,7 +126,7 @@ export default {
 @media (max-width: 1286px) {
   .stocks-container {
     padding-top: 18px;
-    height: 400px;
+    height: 495px;
     .stocks {
       padding-top: 0;
 
