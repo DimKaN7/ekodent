@@ -8,7 +8,8 @@
         <div :class="['submenu__item', (index === selectedItem && 'selected')]" v-for="(item, index) in items" :key="index" @click="() => onItemClick(item.url, index)">{{item.title}}</div>
       </div>
       <div class="submenu__info">
-        <div class="sign-up">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
+<!--        <div class="sign-up">ЗАПИСАТЬСЯ НА ПРИЕМ</div>-->
+        <sign-up class="recommend__sign_up"></sign-up>
         <div class="location">
           <div class="schedule">
             <span>{{headerStrings.desktop[1].texts[0]}}</span>
@@ -29,9 +30,13 @@
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex'
 import { headerStrings } from '../../tools/strings'
+import SignUp from '../SignUp/SignUp';
 
 export default {
   name: 'Submenu',
+  components: {
+    SignUp,
+  },
   props: {
     items: {
       type: Array,

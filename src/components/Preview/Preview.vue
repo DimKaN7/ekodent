@@ -4,7 +4,7 @@
     <div class="preview__gradient"></div>
     <div class="preview__description">
       <div class="preview-text" v-for="(d,index) in previewStrings.descriptions" :key="index">
-        {{d}}
+        <b>{{d}}</b>
       </div>
       <SignUp class="preview__sign_up"></SignUp>
     </div>

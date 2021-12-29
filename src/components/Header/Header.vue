@@ -4,6 +4,14 @@
         data-aos-duration="300"
         :class="['header-container', scrolled && 'scrolled']" >
       <div class="header">
+        <b-alert
+            :show="dismissCountDown"
+            fade
+            variant="success"
+            @dismiss-count-down="countDownChanged" class="position-absolute  top-50 start-50 translate-middle alert-custom text-center"
+        >
+          C 31 декабря по 8 января мы не работаем включительно! <br>С наступающим новым годом!
+        </b-alert>
         <div class="info">
           <a class="info__logo" href="#"></a>
           <!-- <InfoContent v-for="(i, index) in icons" :key="index" :icon="i" :texts="windowWidth < 1287 ? headerStrings.mobile[index].texts : headerStrings.desktop[index].texts"
@@ -182,6 +190,9 @@ export default {
         }
       ],
       Details,
+      dismissSecs: 8,
+      dismissCountDown: 0,
+      showDismissibleAlert: false
     }
   },
   methods: {
@@ -193,6 +204,12 @@ export default {
     },
     hideModal() {
       this.$refs['my-modal'].hide()
+    },
+    countDownChanged(dismissCountDown) {
+      this.dismissCountDown = dismissCountDown
+    },
+    showAlert() {
+      this.dismissCountDown = this.dismissSecs
     },
     sendForm(){
 
@@ -231,11 +248,17 @@ export default {
         this.selectedItem =  index;
       }
     });
+    this.showAlert();
   }
 }
 </script>
 
 <style lang="scss">
+
+.alert-custom{
+  z-index: 100;
+}
+
 
 .make-appointment{
   padding: 35px;
