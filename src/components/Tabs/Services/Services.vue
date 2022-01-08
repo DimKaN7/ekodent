@@ -50,8 +50,19 @@ export default {
   methods: {
     onClick() {
       if (this.isMobile) {
-        window.scrollTo(0, 300)
+        window.scrollTo({
+          top: 300,
+          behavior: 'smooth',
+        })
       }
+    }
+  },
+  mounted() {
+    if (this.isMobile) {
+      window.scrollTo({
+        top: 300,
+        behavior: 'smooth',
+      })
     }
   }
 }
