@@ -34,7 +34,7 @@ import DoctorCard from './DoctorCard';
 import ArrowSlider from '../ArrowSlider/ArrowSlider';
 
 import { doctorsStrings } from '../../tools/strings';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'Doctors',
@@ -52,6 +52,9 @@ export default {
   computed: {
     ...mapGetters([
       'isMobile'
+    ]),
+    ...mapState([
+      'signUpVisible'
     ])
   },
   mounted() {
@@ -59,7 +62,9 @@ export default {
   },
   methods: {
     next() {
-      this.doctorIndex = (this.doctorIndex + 1) % doctorsStrings.doctors.length
+      if (!this.signUpVisible) {
+        this.doctorIndex = (this.doctorIndex + 1) % doctorsStrings.doctors.length
+      }
     }
   },
   beforeDestroy() {

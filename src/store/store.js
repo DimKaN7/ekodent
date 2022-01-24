@@ -8,7 +8,8 @@ export const store = new Vuex.Store(
     state: {
       windowWidth: 0,
       submenuVisible: false,
-      selectedItem: 0
+      selectedItem: 0,
+      signUpVisible: false,
     },
     getters: {
       isMobile: ({windowWidth}) => {
@@ -24,6 +25,9 @@ export const store = new Vuex.Store(
       },
       setSelectedItem: (state, payload) => {
         state.selectedItem = payload
+      },
+      setSignUpVisible: (state, payload) => {
+        state.signUpVisible = payload
       }
     },
     actions: {
@@ -35,6 +39,9 @@ export const store = new Vuex.Store(
       },
       setSelectedItem: (context, payload) => {
         context.commit('setSelectedItem', payload)
+      },
+      setSignUpVisible: (context, payload) => {
+        context.commit('setSignUpVisible', payload)
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="sign-up" @click="showModal">ЗАПИСАТЬСЯ НА ПРИЕМ</div>
-    <b-modal ref="my-modal" hide-footer hide-header title="Using Component Methods">
+    <b-modal @hide="hideModal" ref="my-modal" hide-footer hide-header title="Using Component Methods">
       <div class="make-appointment">
         <form action="../../feedback.php" method="POST">
           <div class="text-center">
@@ -38,27 +38,29 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: "SignUp",
   methods: {
+    ...mapActions([
+      'setSignUpVisible'
+    ]),
     showModal() {
+      this.setSignUpVisible(true)
       this.$refs['my-modal'].show()
     },
     hideModal() {
+      this.setSignUpVisible(false)
       this.$refs['my-modal'].hide()
     },
-  },
+  }
 }
 
 </script>
 
 <style lang="scss">
-
-
 .make-appointment{
   padding: 35px;
-
-
   &__title{
     font-style: normal;
     font-weight: bold;
